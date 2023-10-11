@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://2qa23a5lxf1q"]
+[gd_scene load_steps=15 format=3 uid="uid://2qa23a5lxf1q"]
 
+[ext_resource type="Texture2D" uid="uid://bl3s6s4uhakdh" path="res://marioLevel.png" id="1_803km"]
 [ext_resource type="Script" path="res://character.cs" id="1_a5etn"]
 [ext_resource type="Texture2D" uid="uid://cxwgjvvsbg72k" path="res://dannysprite.png" id="2_xt2oj"]
 
@@ -76,11 +77,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kx073"]
-size = Vector2(481, 20)
+size = Vector2(1360.5, 26)
 
 [node name="First Screen" type="Node2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2226.25, 327.25)
+scale = Vector2(1.24093, 2.65625)
+texture = ExtResource("1_803km")
+
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 offset_left = -2.0
 offset_top = -1.0
 offset_right = 2262.0
@@ -91,27 +98,28 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("1_a5etn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(392.5, 467)
+position = Vector2(109, 500)
 shape = SubResource("RectangleShape2D_h7ovl")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-visible = false
-position = Vector2(574, 322)
+position = Vector2(288, 450)
+zoom = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(393.5, 463)
+position = Vector2(109, 498)
 scale = Vector2(0.90625, 1)
 sprite_frames = SubResource("SpriteFrames_xvpxj")
-animation = &"left"
+animation = &"right"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(427.5, 560)
+position = Vector2(686.25, 575)
 shape = SubResource("RectangleShape2D_kx073")
 
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
-offset_left = 186.0
-offset_top = 551.0
-offset_right = 668.0
-offset_bottom = 569.0
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D/CollisionShape2D"]
+visible = false
+offset_left = -241.5
+offset_top = -9.0
+offset_right = 240.5
+offset_bottom = 9.0
