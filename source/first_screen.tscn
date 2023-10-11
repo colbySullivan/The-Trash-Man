@@ -1,0 +1,117 @@
+[gd_scene load_steps=14 format=3 uid="uid://2qa23a5lxf1q"]
+
+[ext_resource type="Script" path="res://character.cs" id="1_a5etn"]
+[ext_resource type="Texture2D" uid="uid://cxwgjvvsbg72k" path="res://dannysprite.png" id="2_xt2oj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ovl"]
+size = Vector2(21, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnvpi"]
+atlas = ExtResource("2_xt2oj")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijj3q"]
+atlas = ExtResource("2_xt2oj")
+region = Rect2(32, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtg6m"]
+atlas = ExtResource("2_xt2oj")
+region = Rect2(64, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fvmf"]
+atlas = ExtResource("2_xt2oj")
+region = Rect2(96, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhikm"]
+atlas = ExtResource("2_xt2oj")
+region = Rect2(0, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qobsd"]
+atlas = ExtResource("2_xt2oj")
+region = Rect2(32, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2sb1"]
+atlas = ExtResource("2_xt2oj")
+region = Rect2(64, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqeqy"]
+atlas = ExtResource("2_xt2oj")
+region = Rect2(96, 96, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xvpxj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnvpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijj3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtg6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fvmf")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhikm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qobsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2sb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqeqy")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kx073"]
+size = Vector2(481, 20)
+
+[node name="First Screen" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 2262.0
+offset_bottom = 645.0
+color = Color(0, 0, 0, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_a5etn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(392.5, 467)
+shape = SubResource("RectangleShape2D_h7ovl")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+visible = false
+position = Vector2(574, 322)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(393.5, 463)
+scale = Vector2(0.90625, 1)
+sprite_frames = SubResource("SpriteFrames_xvpxj")
+animation = &"left"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(427.5, 560)
+shape = SubResource("RectangleShape2D_kx073")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = 186.0
+offset_top = 551.0
+offset_right = 668.0
+offset_bottom = 569.0
