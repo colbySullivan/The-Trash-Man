@@ -16,13 +16,25 @@ public partial class character : CharacterBody2D
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
+	
 	public bool has_double_jump = false;
+	
+	// Locks animition when in jump
 	public bool animation_locked = false;
+	
+	// Insures idle animation is played on no key press
 	public Vector2 direction = Vector2.Zero;
+	
 	private AnimatedSprite2D _animatedSprite;
+	
+	// Used in land to stop jump animation
 	public bool was_in_air = false;
+	
 	public Vector2 velocity;
+	
 	public string[] array = { "jump_end", "jump_start", "jump_double" };
+	
+	// Checks if sword is swinging so player can't move
 	public bool is_swinging = false;
 	
 	public override void _Ready()
@@ -75,6 +87,7 @@ public partial class character : CharacterBody2D
 		// Get the input direction and handle the movement/deceleration.
 		// Need vector to satisify animation updating
 		direction = Input.GetVector("left", "right", "up", "down");
+		// If player is in air they can swing and move
 		if (direction != Vector2.Zero && (!is_swinging || !IsOnFloor()))
 		{
 			velocity.X = direction.X * Speed;
@@ -133,6 +146,7 @@ public partial class character : CharacterBody2D
 	{
 		if (Input.IsActionJustPressed("fight"))
 		{
+			// Lock movement and animation
 			is_swinging = true;
 			_animatedSprite.Play("fight");
 			animation_locked = true;
