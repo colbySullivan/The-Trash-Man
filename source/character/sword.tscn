@@ -298,5 +298,5 @@ scale = Vector2(0.906, 1)
 sprite_frames = SubResource("SpriteFrames_xvpxj")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.402395
+frame_progress = 0.736059
 centered = false

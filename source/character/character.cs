@@ -17,11 +17,20 @@ public partial class character : CharacterBody2D
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 	public bool has_double_jump = false;
+	public bool animation_locked = false;
+	public Vector2 direction = Vector2.Zero;
+	private AnimatedSprite2D _animatedSprite;
+	
+	public override void _Ready()
+	{
+		// Access to animation globally
+		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
-		AnimatedSprite2D _animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		
 
 		// Add the gravity.
 		if (!IsOnFloor())
@@ -42,22 +51,27 @@ public partial class character : CharacterBody2D
 			}
 
 		// Get the input direction and handle the movement/deceleration.
-		// TODO: may need to get rid of redundant vector and go axis
-		Vector2 direction = Input.GetVector("left", "right", "up", "down");
+		// Need vector to satisify animation updating
+		direction = Input.GetVector("left", "right", "up", "down");
 		if (direction != Vector2.Zero)
 		{
-			if(Input.IsActionPressed("left"))
-				_animatedSprite.Play("left");
-			if(Input.IsActionPressed("right"))
-				_animatedSprite.Play("right");
 			velocity.X = direction.X * Speed;
 		}
 		else
 		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 		}
-
+		
+		update_animation();
 		Velocity = velocity;
 		MoveAndSlide();
+	}
+	public void update_animation()
+	{
+		if (!animation_locked)
+			if (direction.X != 0)
+				_animatedSprite.Play("run");
+			else
+				_animatedSprite.Play("idle");
 	}
 }
