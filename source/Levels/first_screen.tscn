@@ -1456,5 +1456,7 @@ layer_0/tile_data = PackedInt32Array(2162687, 0, 0, 2228223, 0, 1, 2293759, 0, 2
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(227, 512)
 zoom = Vector2(2, 2)
+process_callback = 0
+position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
