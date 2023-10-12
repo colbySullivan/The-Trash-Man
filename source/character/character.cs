@@ -7,11 +7,16 @@ public partial class character : CharacterBody2D
 	public float Speed = 200.0f;
 	
 	[Export]
-	public float JumpVelocity = -200.0f;
+	public float JumpVelocity = -300.0f;
+	
+	// Double jump
+	[Export]
+	public float DoubleJumpVelocity = -150.0f;
 	
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
+	public bool has_double_jump = false;
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -21,19 +26,29 @@ public partial class character : CharacterBody2D
 		// Add the gravity.
 		if (!IsOnFloor())
 			velocity.Y += gravity * (float)delta;
+		else
+			has_double_jump = false;
 
 		// Handle Jump.
-		if ((Input.IsActionJustPressed("ui_accept") || Input.IsActionJustPressed("ui_up")) && IsOnFloor())
-			velocity.Y = JumpVelocity;
+		if (Input.IsActionJustPressed("jump"))
+			if (IsOnFloor())
+				//Normal jump
+				velocity.Y = JumpVelocity;
+			else if (!has_double_jump)
+			{
+				// Double jump from air
+				velocity.Y = DoubleJumpVelocity;
+				has_double_jump = true;
+			}
 
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		Vector2 direction = Input.GetVector("left", "right", "up", "down");
 		if (direction != Vector2.Zero)
 		{
-			if(Input.IsActionPressed("ui_left"))
+			if(Input.IsActionPressed("left"))
 				_animatedSprite.Play("left");
-			if(Input.IsActionPressed("ui_right"))
+			if(Input.IsActionPressed("right"))
 				_animatedSprite.Play("right");
 			velocity.X = direction.X * Speed;
 		}
