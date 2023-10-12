@@ -87,6 +87,7 @@ public partial class character : CharacterBody2D
 		MoveAndSlide();
 		update_animation();
 		update_facing_direction();
+		swing_sword();
 		_on_animated_sprite_2d_animation_finished();
 		
 		
@@ -126,4 +127,20 @@ public partial class character : CharacterBody2D
 		}
 				
 	}
+	public void swing_sword()
+	{
+		if (Input.IsActionJustPressed("fight"))
+		{
+			_animatedSprite.Play("fight");
+			animation_locked = true;
+		}
+	}
+	private void _on_animated_sprite_2d_animation_looped()
+	{
+		// Clear fight animation
+		animation_locked = false;
+	}
 }
+
+
+
