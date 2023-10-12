@@ -1,10 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://2qa23a5lxf1q"]
 
+[ext_resource type="Texture2D" uid="uid://bm177m4rlmjxe" path="res://assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="1_68cnr"]
 [ext_resource type="PackedScene" uid="uid://dvvaev7gupcms" path="res://character/sword.tscn" id="2_2qb6e"]
 [ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_75ko3"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uvvdi"]
-load_path = "res://.godot/imported/marioLevel.png-e327784eae9ada0601d46378eda5892d.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ivihc"]
 texture = ExtResource("2_75ko3")
@@ -1428,12 +1426,12 @@ sources/0 = SubResource("TileSetAtlasSource_ivihc")
 [node name="First Screen" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(2226.25, 327.25)
-scale = Vector2(1.24093, 2.65625)
-texture = SubResource("CompressedTexture2D_uvvdi")
+position = Vector2(593.089, 498.875)
+scale = Vector2(2.68713, 1.09651)
+texture = ExtResource("1_68cnr")
 
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 offset_left = -2.0
 offset_top = -1.0
 offset_right = 2262.0
