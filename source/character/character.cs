@@ -23,6 +23,7 @@ public partial class character : CharacterBody2D
 	public bool was_in_air = false;
 	public Vector2 velocity;
 	public string[] array = { "jump_end", "jump_start", "jump_double" };
+	public bool is_swinging = false;
 	
 	public override void _Ready()
 	{
@@ -74,7 +75,7 @@ public partial class character : CharacterBody2D
 		// Get the input direction and handle the movement/deceleration.
 		// Need vector to satisify animation updating
 		direction = Input.GetVector("left", "right", "up", "down");
-		if (direction != Vector2.Zero)
+		if (direction != Vector2.Zero && (!is_swinging || !IsOnFloor()))
 		{
 			velocity.X = direction.X * Speed;
 		}
@@ -124,6 +125,7 @@ public partial class character : CharacterBody2D
 	{
 		if(Array.Exists(array, element => element == _animatedSprite.Animation) && IsOnFloor()){
 			animation_locked = false;
+			is_swinging = false;
 		}
 				
 	}
@@ -131,6 +133,7 @@ public partial class character : CharacterBody2D
 	{
 		if (Input.IsActionJustPressed("fight"))
 		{
+			is_swinging = true;
 			_animatedSprite.Play("fight");
 			animation_locked = true;
 		}
@@ -139,6 +142,7 @@ public partial class character : CharacterBody2D
 	{
 		// Clear fight animation
 		animation_locked = false;
+		is_swinging = false;
 	}
 }
 

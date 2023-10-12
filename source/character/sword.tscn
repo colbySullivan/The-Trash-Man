@@ -298,7 +298,7 @@ scale = Vector2(0.906, 1)
 sprite_frames = SubResource("SpriteFrames_xvpxj")
 animation = &"jump_start"
 autoplay = "idle"
-frame_progress = 0.0705044
+frame_progress = 0.793961
 centered = false
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
