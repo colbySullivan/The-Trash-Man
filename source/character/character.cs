@@ -29,10 +29,10 @@ public partial class character : CharacterBody2D
 		else
 			has_double_jump = false;
 
-		// Handle Jump.
+		// Handle Jump and double jump
 		if (Input.IsActionJustPressed("jump"))
 			if (IsOnFloor())
-				//Normal jump
+				// Normal jump
 				velocity.Y = JumpVelocity;
 			else if (!has_double_jump)
 			{
@@ -42,7 +42,7 @@ public partial class character : CharacterBody2D
 			}
 
 		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
+		// TODO: may need to get rid of redundant vector and go axis
 		Vector2 direction = Input.GetVector("left", "right", "up", "down");
 		if (direction != Vector2.Zero)
 		{

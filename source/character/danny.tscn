@@ -76,18 +76,14 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(11, 20)
 script = ExtResource("1_q1bcn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(225, 505)
 shape = SubResource("RectangleShape2D_h7ovl")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(225, 506)
-zoom = Vector2(2, 2)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(227, 502)
+position = Vector2(1, -2)
 scale = Vector2(0.90625, 1)
 sprite_frames = SubResource("SpriteFrames_xvpxj")
 animation = &"right"
