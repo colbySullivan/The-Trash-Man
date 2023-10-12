@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bym18rutiea3"]
 
-[ext_resource type="Script" path="res://character/character.cs" id="1_q1bcn"]
+[ext_resource type="Script" path="res://character/danny.cs" id="1_xm75j"]
 [ext_resource type="Texture2D" uid="uid://cxwgjvvsbg72k" path="res://src/dannysprite.png" id="2_r0exb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ovl"]
@@ -77,7 +77,7 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(11, 20)
-script = ExtResource("1_q1bcn")
+script = ExtResource("1_xm75j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_h7ovl")
@@ -87,5 +87,7 @@ position = Vector2(1, -2)
 scale = Vector2(0.90625, 1)
 sprite_frames = SubResource("SpriteFrames_xvpxj")
 animation = &"right"
+autoplay = "right"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="getRandom"]
