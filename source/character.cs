@@ -3,8 +3,12 @@ using System;
 
 public partial class character : CharacterBody2D
 {
-	public const float Speed = 300.0f;
-	public const float JumpVelocity = -400.0f;
+	[Export]
+	public float Speed = 200.0f;
+	
+	[Export]
+	public float JumpVelocity = -200.0f;
+	
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxwgjvvsbg72k"
-path="res://.godot/imported/dannysprite.png-e1a1a4c5e113f6db1e89e40c4b13f86e.ctex"
+uid="uid://5yejps5up7i3"
+path="res://.godot/imported/Idle-Sheet.png-1a18777280dff34275ed5a4906e36d9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dannysprite.png"
-dest_files=["res://.godot/imported/dannysprite.png-e1a1a4c5e113f6db1e89e40c4b13f86e.ctex"]
+source_file="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Idle/Idle-Sheet.png"
+dest_files=["res://.godot/imported/Idle-Sheet.png-1a18777280dff34275ed5a4906e36d9a.ctex"]
 
 [params]
 
