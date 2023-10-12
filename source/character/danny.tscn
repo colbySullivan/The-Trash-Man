@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bym18rutiea3"]
 
-[ext_resource type="Script" path="res://character.cs" id="1_silq3"]
+[ext_resource type="Script" path="res://character/character.cs" id="1_q1bcn"]
 [ext_resource type="Texture2D" uid="uid://cxwgjvvsbg72k" path="res://src/dannysprite.png" id="2_r0exb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ovl"]
@@ -76,7 +76,7 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_silq3")
+script = ExtResource("1_q1bcn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(225, 505)

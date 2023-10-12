@@ -1,11 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://2qa23a5lxf1q"]
 
-[ext_resource type="Texture2D" uid="uid://bl3s6s4uhakdh" path="res://marioLevel.png" id="1_803km"]
-[ext_resource type="PackedScene" uid="uid://bym18rutiea3" path="res://character/danny.tscn" id="2_rpxeh"]
-[ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="4_ong1e"]
+[ext_resource type="PackedScene" uid="uid://bym18rutiea3" path="res://character/danny.tscn" id="1_qax0d"]
+[ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_75ko3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uvvdi"]
+load_path = "res://.godot/imported/marioLevel.png-e327784eae9ada0601d46378eda5892d.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ivihc"]
-texture = ExtResource("4_ong1e")
+texture = ExtResource("2_75ko3")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1429,7 +1431,7 @@ sources/0 = SubResource("TileSetAtlasSource_ivihc")
 visible = false
 position = Vector2(2226.25, 327.25)
 scale = Vector2(1.24093, 2.65625)
-texture = ExtResource("1_803km")
+texture = SubResource("CompressedTexture2D_uvvdi")
 
 [node name="Background" type="ColorRect" parent="."]
 offset_left = -2.0
@@ -1438,7 +1440,7 @@ offset_right = 2262.0
 offset_bottom = 645.0
 color = Color(0.2, 0.431373, 1, 1)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_rpxeh")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_qax0d")]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 1)
