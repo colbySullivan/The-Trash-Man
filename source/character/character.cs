@@ -62,9 +62,11 @@ public partial class character : CharacterBody2D
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 		}
 		
-		update_animation();
+		
 		Velocity = velocity;
 		MoveAndSlide();
+		update_animation();
+		update_facing_direction();
 	}
 	public void update_animation()
 	{
@@ -73,5 +75,12 @@ public partial class character : CharacterBody2D
 				_animatedSprite.Play("run");
 			else
 				_animatedSprite.Play("idle");
+	}
+	public void update_facing_direction()
+	{
+		if (direction.X > 0)
+			_animatedSprite.FlipH = false;
+		else if (direction.X < 0)
+			_animatedSprite.FlipH = true;
 	}
 }
