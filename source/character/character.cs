@@ -37,6 +37,9 @@ public partial class character : CharacterBody2D
 	// Checks if sword is swinging so player can't move
 	public bool is_swinging = false;
 	
+	// Used for sword collision
+	public bool facing_left = false;
+	
 	public override void _Ready()
 	{
 		// Access to animation globally
@@ -118,9 +121,17 @@ public partial class character : CharacterBody2D
 	public void update_facing_direction()
 	{
 		if (direction.X > 0)
+		{
+			facing_left = false;
 			_animatedSprite.FlipH = false;
+		}
+			
 		else if (direction.X < 0)
+		{
+			facing_left = true;
 			_animatedSprite.FlipH = true;
+		}
+			
 	}
 	public void jump()
 	{
@@ -151,6 +162,10 @@ public partial class character : CharacterBody2D
 			is_swinging = true;
 			_animatedSprite.Play("fight");
 			animation_locked = true;
+			if(facing_left)
+				node.Position = node.left;
+			else
+				node.Position = node.right;
 			// Renable sword area hitbox
 			node.Disabled = false;
 		}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dvvaev7gupcms"]
+[gd_scene load_steps=57 format=3 uid="uid://dvvaev7gupcms"]
 
 [ext_resource type="Script" path="res://character/character.cs" id="1_oawh3"]
 [ext_resource type="Texture2D" uid="uid://c5c8sj5s52mxr" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Attack-01/Attack-01-Sheet.png" id="2_8avbi"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ygvkwahra3sl" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Jump-End/Jump-End-Sheet.png" id="4_h6c13"]
 [ext_resource type="Texture2D" uid="uid://cx8pm0f37r27y" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Jump-Start/Jump-Start-Sheet.png" id="5_lrfcy"]
 [ext_resource type="Texture2D" uid="uid://benf3odv62lf7" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Jumlp-All/Jump-All-Sheet.png" id="6_j7tas"]
+[ext_resource type="Script" path="res://character/CollisionShape2D.cs" id="9_01ji7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ovl"]
 size = Vector2(18.5, 48)
@@ -347,7 +348,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5jyf"]
-size = Vector2(89, 36)
+size = Vector2(38, 36)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vj6ej"]
 height = 50.0
@@ -366,16 +367,17 @@ scale = Vector2(0.906, 1)
 sprite_frames = SubResource("SpriteFrames_xvpxj")
 animation = &"fight"
 autoplay = "idle"
-frame_progress = 0.960319
+frame_progress = 0.931634
 centered = false
 
 [node name="SwordArea" type="Area2D" parent="."]
 position = Vector2(25, 2.08165e-12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordArea"]
-position = Vector2(-20.5, -2)
+position = Vector2(-54, -2)
 shape = SubResource("RectangleShape2D_m5jyf")
 disabled = true
+script = ExtResource("9_01ji7")
 
 [node name="AreaHitbox" type="Area2D" parent="."]
 
