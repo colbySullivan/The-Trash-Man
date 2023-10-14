@@ -1,1 +1,3 @@
-# Platform shooter
+# Danny Platformer
+
+TODO make readMe
