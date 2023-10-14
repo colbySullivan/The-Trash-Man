@@ -156,6 +156,7 @@ public partial class character : CharacterBody2D
 	public void swing_sword()
 	{
 		var node = GetNode<CollisionShape2D>("SwordArea/CollisionShape2D");
+		node.Position = node.right;
 		if (Input.IsActionJustPressed("fight"))
 		{
 			// Lock movement and animation
@@ -164,8 +165,6 @@ public partial class character : CharacterBody2D
 			animation_locked = true;
 			if(facing_left)
 				node.Position = node.left;
-			else
-				node.Position = node.right;
 			// Renable sword area hitbox
 			node.Disabled = false;
 		}

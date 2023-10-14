@@ -367,7 +367,7 @@ scale = Vector2(0.906, 1)
 sprite_frames = SubResource("SpriteFrames_xvpxj")
 animation = &"fight"
 autoplay = "idle"
-frame_progress = 0.931634
+frame_progress = 0.299639
 centered = false
 
 [node name="SwordArea" type="Area2D" parent="."]
