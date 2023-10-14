@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dvvaev7gupcms"]
+[gd_scene load_steps=46 format=3 uid="uid://dvvaev7gupcms"]
 
 [ext_resource type="Script" path="res://character/character.cs" id="1_oawh3"]
 [ext_resource type="Texture2D" uid="uid://c5c8sj5s52mxr" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Attack-01/Attack-01-Sheet.png" id="2_8avbi"]
@@ -284,6 +284,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5jyf"]
+size = Vector2(34, 20)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(11, 20)
 script = ExtResource("1_oawh3")
@@ -298,7 +301,15 @@ scale = Vector2(0.906, 1)
 sprite_frames = SubResource("SpriteFrames_xvpxj")
 animation = &"fight"
 autoplay = "idle"
+frame_progress = 0.893237
 centered = false
+
+[node name="SwordArea" type="Area2D" parent="."]
+position = Vector2(29, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordArea"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_m5jyf")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
