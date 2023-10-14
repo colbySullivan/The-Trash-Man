@@ -50,10 +50,9 @@ public partial class danny : CharacterBody2D
 	}
 	private void _on_interaction_area_area_shape_entered(Rid area_rid, Area2D area, long area_shape_index, long local_shape_index)
 	{
-		GD.Print(area.Name);
 		if(area.Name == "SwordArea")
 		{
-			GD.Print(area.Name);
+			GD.Print("Danny ded");
 			QueueFree();
 		}
 			

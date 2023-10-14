@@ -144,16 +144,18 @@ public partial class character : CharacterBody2D
 	}
 	public void swing_sword()
 	{
+		var node = GetNode<CollisionShape2D>("SwordArea/CollisionShape2D");
 		if (Input.IsActionJustPressed("fight"))
 		{
 			// Lock movement and animation
 			is_swinging = true;
 			_animatedSprite.Play("fight");
 			animation_locked = true;
-			//SwordArea/CollisionShape2D.disabled = false;
-			var node = GetNode<CollisionShape2D>("SwordArea/CollisionShape2D");
+			// Renable sword area hitbox
 			node.Disabled = false;
 		}
+		else
+			node.Disabled = true;
 	}
 	private void _on_animated_sprite_2d_animation_looped()
 	{
@@ -161,7 +163,10 @@ public partial class character : CharacterBody2D
 		animation_locked = false;
 		is_swinging = false;
 	}
+	private void _on_area_hitbox_body_entered(Node2D body)
+	{
+		_animatedSprite.Play("ded");
+		animation_locked = true;
+		GD.Print(body.Name);
+	}
 }
-
-
-
