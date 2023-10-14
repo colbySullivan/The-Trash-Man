@@ -156,6 +156,7 @@ public partial class character : CharacterBody2D
 	public void swing_sword()
 	{
 		var node = GetNode<CollisionShape2D>("SwordArea/CollisionShape2D");
+		// Sword starts to the right
 		node.Position = node.right;
 		if (Input.IsActionJustPressed("fight"))
 		{
