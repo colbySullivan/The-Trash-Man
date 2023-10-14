@@ -150,6 +150,9 @@ public partial class character : CharacterBody2D
 			is_swinging = true;
 			_animatedSprite.Play("fight");
 			animation_locked = true;
+			//SwordArea/CollisionShape2D.disabled = false;
+			var node = GetNode<CollisionShape2D>("SwordArea/CollisionShape2D");
+			node.Disabled = false;
 		}
 	}
 	private void _on_animated_sprite_2d_animation_looped()
