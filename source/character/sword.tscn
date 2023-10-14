@@ -366,24 +366,20 @@ scale = Vector2(0.906, 1)
 sprite_frames = SubResource("SpriteFrames_xvpxj")
 animation = &"fight"
 autoplay = "idle"
-frame_progress = 0.277904
+frame_progress = 0.822028
 centered = false
 
 [node name="SwordArea" type="Area2D" parent="."]
-visible = false
 position = Vector2(25, 2.08165e-12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordArea"]
-visible = false
 position = Vector2(3.5, -2)
 shape = SubResource("RectangleShape2D_m5jyf")
 disabled = true
 
 [node name="AreaHitbox" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHitbox"]
-visible = false
 position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_vj6ej")
 

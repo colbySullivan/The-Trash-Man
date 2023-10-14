@@ -165,8 +165,11 @@ public partial class character : CharacterBody2D
 	}
 	private void _on_area_hitbox_body_entered(Node2D body)
 	{
-		_animatedSprite.Play("ded");
-		animation_locked = true;
-		GD.Print(body.Name);
+		if(body.Name == "Danny")
+		{
+			_animatedSprite.Play("ded");
+			animation_locked = true;
+			GD.Print(body.Name);
+		}
 	}
 }
