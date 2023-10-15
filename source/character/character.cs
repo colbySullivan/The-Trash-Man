@@ -180,7 +180,7 @@ public partial class character : CharacterBody2D
 	}
 	private void _on_area_hitbox_body_entered(Node2D body)
 	{
-		if(body.Name == "Danny")
+		if(body.IsInGroup("Mobs"))
 		{
 			_animatedSprite.Play("ded");
 			animation_locked = true;
