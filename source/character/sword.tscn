@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://character/CollisionShape2D.cs" id="9_01ji7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ovl"]
-size = Vector2(18.5, 48)
+size = Vector2(18.5, 44)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ti3pw"]
 atlas = ExtResource("2_vkbyj")
@@ -351,14 +351,14 @@ animations = [{
 size = Vector2(38, 36)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vj6ej"]
-height = 50.0
+height = 46.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(11, 20)
 script = ExtResource("1_oawh3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_h7ovl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
