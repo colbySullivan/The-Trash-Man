@@ -13,6 +13,9 @@ public partial class character : CharacterBody2D
 	[Export]
 	public float DoubleJumpVelocity = -150.0f;
 	
+	[Export]
+	public int health = 3;
+	
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -186,7 +189,9 @@ public partial class character : CharacterBody2D
 			animation_locked = true;
 			GD.Print(body.Name);
 			// Restart scene on danny collision
-			GetTree().ReloadCurrentScene();
+			health--;
+			if (health <= 0)
+				GetTree().ReloadCurrentScene();
 		}
 	}
 	public void _on_fall_area_area_entered(Area2D area)
