@@ -185,6 +185,7 @@ public partial class character : CharacterBody2D
 			_animatedSprite.Play("ded");
 			animation_locked = true;
 			GD.Print(body.Name);
+			GetTree().ReloadCurrentScene();
 		}
 	}
 }
