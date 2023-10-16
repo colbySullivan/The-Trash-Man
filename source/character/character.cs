@@ -185,7 +185,13 @@ public partial class character : CharacterBody2D
 			_animatedSprite.Play("ded");
 			animation_locked = true;
 			GD.Print(body.Name);
+			// Restart scene on danny collision
 			GetTree().ReloadCurrentScene();
 		}
+	}
+	public void _on_fall_area_area_entered(Area2D area)
+	{
+		// Restart scene on pitfall
+		GetTree().ReloadCurrentScene();
 	}
 }

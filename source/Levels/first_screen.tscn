@@ -1557,3 +1557,6 @@ shape = SubResource("RectangleShape2D_1bqxg")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Fall area"]
 position = Vector2(1471, 629)
 shape = SubResource("RectangleShape2D_1bqxg")
+
+[connection signal="area_entered" from="Fall area" to="Character" method="_on_fall_area_area_entered"]
+[connection signal="body_entered" from="Fall area" to="Character" method="_on_fall_area_body_entered"]
