@@ -188,7 +188,7 @@ public partial class character : CharacterBody2D
 	{
 		if(body.IsInGroup("Mobs"))
 		{
-			_animatedSprite.Play("ded");
+			_animatedSprite.Play("idle_death");
 			animation_locked = true;
 			GD.Print(body.Name);
 			// Restart scene on danny collision
