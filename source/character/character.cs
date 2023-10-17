@@ -16,6 +16,9 @@ public partial class character : CharacterBody2D
 	[Export]
 	public int health = 3;
 	
+	[Export]
+	public Vector2 initalPos = new Vector2(250,500);
+	
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -190,6 +193,7 @@ public partial class character : CharacterBody2D
 			GD.Print(body.Name);
 			// Restart scene on danny collision
 			health--;
+			Position = initalPos;
 			if (health <= 0)
 				GetTree().ReloadCurrentScene();
 		}
