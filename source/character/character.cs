@@ -201,6 +201,7 @@ public partial class character : CharacterBody2D
 	public void _on_fall_area_area_entered(Area2D area)
 	{
 		// Restart scene on pitfall
-		GetTree().ReloadCurrentScene();
+		GetTree().ChangeSceneToFile("res://Levels/level2.tscn");
+		//GetTree().ReloadCurrentScene();
 	}
 }
