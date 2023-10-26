@@ -2435,12 +2435,12 @@ shape = SubResource("RectangleShape2D_1bqxg")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(235, 466)
 motion_scale = Vector2(0.9, 0.9)
-motion_mirroring = Vector2(2.08165e-12, 1080)
+motion_mirroring = Vector2(600, 1080)
 
 [node name="Backgrounds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(2, -85)
-scale = Vector2(2.68713, 1.09651)
+position = Vector2(45.0177, -127.437)
+scale = Vector2(3.13523, 1.40855)
 texture = ExtResource("1_f2ifp")
 
 [connection signal="area_entered" from="Fall area" to="Character" method="_on_fall_area_area_entered"]

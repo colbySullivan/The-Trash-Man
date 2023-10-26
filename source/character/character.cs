@@ -198,12 +198,16 @@ public partial class character : CharacterBody2D
 				GetTree().ReloadCurrentScene();
 		}
 	}
+	// Player fell down pit
 	public void _on_fall_area_area_entered(Area2D area)
 	{
 			GetTree().ReloadCurrentScene();
 	}
+	// Player went through portal
 	public void _on_portal_body_entered(Node2D body)
 	{
-		GetTree().ChangeSceneToFile("res://Levels/level2.tscn");
+		GD.Print(body.Name);
+		if(body.Name == "AreaHitbox")
+			GetTree().ChangeSceneToFile("res://Levels/level2.tscn");
 	}
 }
