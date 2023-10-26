@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://2qa23a5lxf1q"]
 
-[ext_resource type="Texture2D" uid="uid://bm177m4rlmjxe" path="res://assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="1_68cnr"]
 [ext_resource type="PackedScene" uid="uid://dvvaev7gupcms" path="res://character/sword.tscn" id="2_2qb6e"]
 [ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_75ko3"]
 [ext_resource type="PackedScene" uid="uid://bym18rutiea3" path="res://character/danny.tscn" id="4_f4xs7"]
 [ext_resource type="Texture2D" uid="uid://dhyacq3amaea" path="res://assets/Legacy Fantasy - Kingdom Fortress - Update/Background/02.png" id="5_fxav6"]
+[ext_resource type="Texture2D" uid="uid://bwgu10y30tkp6" path="res://assets/Legacy Fantasy - Kingdom Fortress - Update/Background/Background.2-export.png" id="5_yy7d6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ivihc"]
 texture = ExtResource("2_75ko3")
@@ -1488,25 +1488,6 @@ size = Vector2(46.5, 75.75)
 
 [node name="First Screen" type="Node2D"]
 
-[node name="Backgrounds" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(593.089, 498.875)
-scale = Vector2(2.68713, 1.09651)
-texture = ExtResource("1_68cnr")
-
-[node name="BackgroundExtention" type="Sprite2D" parent="Backgrounds"]
-position = Vector2(479.458, 0.113983)
-scale = Vector2(1.00239, 1)
-texture = ExtResource("1_68cnr")
-
-[node name="BackgroundExtention2" type="Sprite2D" parent="Backgrounds"]
-position = Vector2(960.066, 0.227936)
-texture = ExtResource("1_68cnr")
-
-[node name="BackgroundExtention3" type="Sprite2D" parent="Backgrounds"]
-position = Vector2(1440.1, 0.341919)
-texture = ExtResource("1_68cnr")
-
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 1)
 tile_set = SubResource("TileSet_7hn7t")
@@ -1541,22 +1522,6 @@ position = Vector2(319, 516)
 [node name="Danny2" parent="." groups=["Mobs"] instance=ExtResource("4_f4xs7")]
 position = Vector2(621, 440)
 
-[node name="Backgrounds2" type="Sprite2D" parent="."]
-visible = false
-z_index = -1
-position = Vector2(8657, 194)
-rotation = -3.14159
-scale = Vector2(7.22067, 1.20233)
-texture = ExtResource("1_68cnr")
-
-[node name="BackgroundExtention" type="Sprite2D" parent="Backgrounds2"]
-position = Vector2(480.033, 0.113983)
-texture = ExtResource("1_68cnr")
-
-[node name="BackgroundExtention2" type="Sprite2D" parent="Backgrounds2"]
-position = Vector2(960.066, 0.227936)
-texture = ExtResource("1_68cnr")
-
 [node name="Fall area" type="Area2D" parent="."]
 position = Vector2(0, 1)
 
@@ -1582,11 +1547,20 @@ position = Vector2(235, 466)
 motion_scale = Vector2(0.9, 0.9)
 motion_mirroring = Vector2(1050, 1080)
 
-[node name="Backgrounds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(45.0177, -127.437)
+position = Vector2(51, -35)
 scale = Vector2(3.13523, 1.40855)
 texture = ExtResource("5_fxav6")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(235, 466)
+motion_mirroring = Vector2(672, 500)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(80, -18)
+scale = Vector2(2, 2)
+texture = ExtResource("5_yy7d6")
 
 [connection signal="area_entered" from="Fall area" to="Character" method="_on_fall_area_area_entered"]
 [connection signal="area_entered" from="Portal" to="Character" method="_on_portal_body_entered"]
