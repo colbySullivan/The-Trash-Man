@@ -210,4 +210,10 @@ public partial class character : CharacterBody2D
 		if(body.Name == "AreaHitbox")
 			GetTree().ChangeSceneToFile("res://Levels/level2.tscn");
 	}
+	// Restart game
+	private void restart_portal(Node2D body)
+	{
+		if(body.Name == "AreaHitbox")
+			GetTree().ChangeSceneToFile("res://Levels/first_screen.tscn");
+	}
 }

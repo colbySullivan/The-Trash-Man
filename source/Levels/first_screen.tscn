@@ -1503,13 +1503,6 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="Label" type="Label" parent="Camera2D"]
-offset_left = -119.0
-offset_top = -81.0
-offset_right = -59.0
-offset_bottom = -47.0
-text = "Test"
-
 [node name="Character" parent="." instance=ExtResource("2_2qb6e")]
 position = Vector2(225, 501)
 
@@ -1561,6 +1554,13 @@ motion_mirroring = Vector2(672, 500)
 position = Vector2(80, -18)
 scale = Vector2(2, 2)
 texture = ExtResource("5_yy7d6")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 224.0
+offset_top = 409.0
+offset_right = 284.0
+offset_bottom = 443.0
+text = "Level 1-1"
 
 [connection signal="area_entered" from="Fall area" to="Character" method="_on_fall_area_area_entered"]
 [connection signal="area_entered" from="Portal" to="Character" method="_on_portal_body_entered"]

@@ -15,6 +15,8 @@ public partial class danny : CharacterBody2D
 	public bool timer = true;
 	public double time = 0;
 	
+	public int attackState = 1;
+	
 	public override void _PhysicsProcess(double delta)
 	{
 		if (timer) {
@@ -33,17 +35,22 @@ public partial class danny : CharacterBody2D
 		if (!IsOnFloor())
 			velocity.Y += gravity * (float)delta;
 
-
-		if(state == 3){
+		if(attackState == 1)
+		{
+			if(state == 3){
 			_animatedSprite.Play("left");
 			velocity.X = SpeedLeft;
-		}
-		if(state == 2){
+			}
+			if(state == 2){
 			_animatedSprite.Play("right");
 			velocity.X = SpeedRight;
-		}
-		else if (state == 1)
+			}
+			else if (state == 1)
 			velocity.X = 0;
+			GD.Print("Don't Attack");
+		}
+		else
+			GD.Print("Attack");
 
 		Velocity = velocity;
 		MoveAndSlide();
@@ -55,7 +62,11 @@ public partial class danny : CharacterBody2D
 			GD.Print("Danny ded");
 			QueueFree();
 		}
-			
 	}
+	private void _on_attack_range_body_entered(Node2D body)
+	{
+		if(body.Name == "Character")
+			attackState = 2;
+	}	
 }
 
