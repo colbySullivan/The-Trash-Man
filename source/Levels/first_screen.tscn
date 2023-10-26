@@ -1558,12 +1558,19 @@ texture = ExtResource("1_68cnr")
 position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fall area"]
-position = Vector2(1022.5, 627.25)
+position = Vector2(1024, 611)
 shape = SubResource("RectangleShape2D_1bqxg")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Fall area"]
 position = Vector2(1471, 629)
 shape = SubResource("RectangleShape2D_1bqxg")
 
+[node name="Portal" type="Area2D" parent="."]
+position = Vector2(0, 2)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Portal"]
+position = Vector2(161, 492)
+shape = SubResource("RectangleShape2D_1bqxg")
+
 [connection signal="area_entered" from="Fall area" to="Character" method="_on_fall_area_area_entered"]
-[connection signal="body_entered" from="Fall area" to="Character" method="_on_fall_area_body_entered"]
+[connection signal="area_entered" from="Portal" to="Character" method="_on_portal_body_entered"]
