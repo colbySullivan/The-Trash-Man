@@ -53,8 +53,6 @@ public partial class danny : CharacterBody2D
 			}
 			else if (state == 1)
 			velocity.X = 0;
-			//GD.Print(buffer);
-			//GD.Print("Don't Attack");
 		}
 		else if(attackState == "fightLeft")
 		{
@@ -79,34 +77,22 @@ public partial class danny : CharacterBody2D
 			QueueFree();
 		}
 	}
+	// Character on left of danny
 	private void _on_attack_range_body_entered_left(Node2D body)
 	{
-		//GD.Print(body.Position);
-		//GD.Print(body.Name);
-		if(body.Name == "Character"){
-			attackState = "fightLeft";
-			GD.Print(body.Name);
-			
-		}
-			
+		if(body.Name == "Character") // Insures that other collisons don't count
+			attackState = "fightLeft";	
 	}
 	private void _on_interaction_area_body_exited(Node2D body)
 	{
-		if(body.Name == "Character"){
+		if(body.Name == "Character")
 			// Return to random state when user is outside zone
 			attackState = "wonder";
-			GD.Print("body.Name");
-			}
 	}	
+	// Character on right of danny
 	private void _on_attack_range_body_entered_right(Node2D body)
 	{
-		//GD.Print(body.Position);
-		//GD.Print(body.Name);
-		if(body.Name == "Character"){
+		if(body.Name == "Character")
 			attackState = "fightRight";
-			GD.Print(body.Name);
-			
-		}
-			
 	}	
 }

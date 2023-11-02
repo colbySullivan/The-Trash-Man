@@ -415,6 +415,8 @@ script = ExtResource("9_01ji7")
 [node name="AreaHitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHitbox"]
+light_mask = 5
+visibility_layer = 5
 position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_vj6ej")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://qqnwe7gjb41c"]
+[gd_scene load_steps=12 format=3 uid="uid://qqnwe7gjb41c"]
 
 [ext_resource type="Texture2D" uid="uid://bv7vpnetswain" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/Background.png" id="1_f2ifp"]
 [ext_resource type="Texture2D" uid="uid://beuk8c5lk1eq4" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/Tiles.png" id="2_swdog"]
@@ -2401,6 +2401,9 @@ size = Vector2(77, 53.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8fcr"]
 size = Vector2(46.5, 75.75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crur7"]
+size = Vector2(88, 47)
+
 [node name="First Screen2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2425,10 +2428,18 @@ position = Vector2(225, 501)
 remote_path = NodePath("../../Camera2D")
 
 [node name="Danny" parent="." groups=["Mobs"] instance=ExtResource("4_ht8o5")]
+light_mask = 5
+visibility_layer = 5
 position = Vector2(319, 516)
+collision_layer = 5
+collision_mask = 5
 
 [node name="Danny2" parent="." groups=["Mobs"] instance=ExtResource("4_ht8o5")]
+light_mask = 5
+visibility_layer = 5
 position = Vector2(621, 440)
+collision_layer = 5
+collision_mask = 5
 
 [node name="Fall area" type="Area2D" parent="."]
 position = Vector2(0, 1)
@@ -2461,14 +2472,14 @@ position = Vector2(0, 2)
 position = Vector2(-8, 484)
 shape = SubResource("RectangleShape2D_x8fcr")
 
-[node name="Label" type="Label" parent="."]
+[node name="LevelLabel" type="Label" parent="."]
 offset_left = 224.0
 offset_top = 426.0
 offset_right = 292.0
 offset_bottom = 460.0
 text = "Level 1-2"
 
-[node name="Label2" type="Label" parent="."]
+[node name="DoorLabel" type="Label" parent="."]
 offset_left = 17.0
 offset_top = 446.0
 offset_right = 95.0
@@ -2476,6 +2487,17 @@ offset_bottom = 480.0
 theme_type_variation = &"small"
 theme_override_font_sizes/font_size = 7
 text = "< Previous level"
+
+[node name="InvisibleWall" type="StaticBody2D" parent="."]
+position = Vector2(0, 1)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleWall"]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(1027, 517)
+shape = SubResource("RectangleShape2D_crur7")
 
 [connection signal="area_entered" from="Fall area" to="Character" method="_on_fall_area_area_entered"]
 [connection signal="body_entered" from="Fall area" to="Character" method="_on_fall_area_body_entered"]

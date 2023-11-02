@@ -94,7 +94,7 @@ scale = Vector2(0.671875, 0.708333)
 sprite_frames = SubResource("SpriteFrames_xvpxj")
 animation = &"right"
 autoplay = "right"
-frame_progress = 0.409711
+frame_progress = 0.548227
 
 [node name="interactionArea" type="Area2D" parent="."]
 position = Vector2(0, -1)
