@@ -15,10 +15,16 @@ public partial class danny : CharacterBody2D
 	public bool timer = true;
 	public double time = 0;
 	
-	public int attackState = 1;
+	public String attackState = "wonder";
+	
+	public Vector2 playerPos = new Vector2(0,0);
 	
 	public override void _PhysicsProcess(double delta)
 	{
+		//var dannynode = GetTree().GetRoot().GetNode("Character");
+		//onready var player := get_tree().get_root().get_node("Main2D").get_node("Player")
+		//GD.Print(dannynode.Position);
+		//Vector2 buffer = dannynode.Position;
 		if (timer) {
 		  time += delta;
 		  if (time > 2f) {
@@ -35,7 +41,7 @@ public partial class danny : CharacterBody2D
 		if (!IsOnFloor())
 			velocity.Y += gravity * (float)delta;
 
-		if(attackState == 1)
+		if(attackState == "wonder")
 		{
 			if(state == 3){
 			_animatedSprite.Play("left");
@@ -47,10 +53,20 @@ public partial class danny : CharacterBody2D
 			}
 			else if (state == 1)
 			velocity.X = 0;
-			GD.Print("Don't Attack");
+			//GD.Print(buffer);
+			//GD.Print("Don't Attack");
 		}
-		else
-			GD.Print("Attack");
+		else if(attackState == "fightLeft")
+		{
+			_animatedSprite.Play("left");
+			velocity.X = SpeedLeft;
+		}
+		else if(attackState == "fightRight")
+		{
+			_animatedSprite.Play("right");
+			velocity.X = SpeedRight;
+		}
+			
 
 		Velocity = velocity;
 		MoveAndSlide();
@@ -63,10 +79,34 @@ public partial class danny : CharacterBody2D
 			QueueFree();
 		}
 	}
-	private void _on_attack_range_body_entered(Node2D body)
+	private void _on_attack_range_body_entered_left(Node2D body)
 	{
-		if(body.Name == "Character")
-			attackState = 2;
+		//GD.Print(body.Position);
+		//GD.Print(body.Name);
+		if(body.Name == "Character"){
+			attackState = "fightLeft";
+			GD.Print(body.Name);
+			
+		}
+			
+	}
+	private void _on_interaction_area_body_exited(Node2D body)
+	{
+		if(body.Name == "Character"){
+			// Return to random state when user is outside zone
+			attackState = "wonder";
+			GD.Print("body.Name");
+			}
+	}	
+	private void _on_attack_range_body_entered_right(Node2D body)
+	{
+		//GD.Print(body.Position);
+		//GD.Print(body.Name);
+		if(body.Name == "Character"){
+			attackState = "fightRight";
+			GD.Print(body.Name);
+			
+		}
+			
 	}	
 }
-
