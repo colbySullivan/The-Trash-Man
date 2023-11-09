@@ -19,6 +19,8 @@ public partial class danny : CharacterBody2D
 	
 	public Vector2 playerPos = new Vector2(0,0);
 	
+	Random r = new Random();
+	
 	public override void _PhysicsProcess(double delta)
 	{
 		//var dannynode = GetTree().GetRoot().GetNode("Character");
@@ -27,9 +29,8 @@ public partial class danny : CharacterBody2D
 		//Vector2 buffer = dannynode.Position;
 		if (timer) {
 		  time += delta;
+		  // Change danny state every 2 seconds
 		  if (time > 2f) {
-			// 2 seconds has passed, do your stuff
-			Random r = new Random();
 			state = r.Next(0, 4);
 			time = 0;
 		  }
