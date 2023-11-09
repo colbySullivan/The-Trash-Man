@@ -41,6 +41,7 @@ public partial class danny : CharacterBody2D
 		if (!IsOnFloor())
 			velocity.Y += gravity * (float)delta;
 
+		// User outside of fight area
 		if(attackState == "wonder")
 		{
 			if(state == 3){
@@ -54,11 +55,13 @@ public partial class danny : CharacterBody2D
 			else if (state == 1)
 			velocity.X = 0;
 		}
+		// User entered left area
 		else if(attackState == "fightLeft")
 		{
 			_animatedSprite.Play("left");
 			velocity.X = SpeedLeft;
 		}
+		// User entered right area
 		else if(attackState == "fightRight")
 		{
 			_animatedSprite.Play("right");
