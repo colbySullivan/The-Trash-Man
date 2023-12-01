@@ -200,9 +200,12 @@ public partial class character : CharacterBody2D
 			GD.Print(body.Name);
 			// Restart scene on danny collision
 			health--;
-			Position = initalPos;
 			if (health <= 0)
+			{
+				Position = initalPos;
 				GetTree().ReloadCurrentScene();
+			}
+				
 		}
 	}
 	// Player fell down pit
