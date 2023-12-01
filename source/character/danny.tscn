@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bym18rutiea3"]
+[gd_scene load_steps=16 format=3 uid="uid://bym18rutiea3"]
 
 [ext_resource type="Script" path="res://character/danny.cs" id="1_xm75j"]
 [ext_resource type="Texture2D" uid="uid://cxwgjvvsbg72k" path="res://src/dannysprite.png" id="2_r0exb"]
@@ -78,8 +78,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q4whe"]
 size = Vector2(33, 20)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tlq4q"]
-radius = 105.019
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm3iv"]
+size = Vector2(80, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tm1ve"]
+size = Vector2(66, 73)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(11, 20)
@@ -106,14 +109,14 @@ shape = SubResource("RectangleShape2D_q4whe")
 [node name="AttackRangeRight" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRangeRight"]
-position = Vector2(85, -1)
-shape = SubResource("CircleShape2D_tlq4q")
+position = Vector2(56, -25)
+shape = SubResource("RectangleShape2D_lm3iv")
 
 [node name="AttackRangeLeft" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRangeLeft"]
-position = Vector2(-73, 1)
-shape = SubResource("CircleShape2D_tlq4q")
+position = Vector2(-50, -25.5)
+shape = SubResource("RectangleShape2D_tm1ve")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_shape_entered" from="interactionArea" to="." method="_on_interaction_area_area_shape_entered"]
