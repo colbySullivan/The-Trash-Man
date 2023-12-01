@@ -188,6 +188,12 @@ public partial class character : CharacterBody2D
 	{
 		if(body.IsInGroup("Mobs"))
 		{
+			//var health2 = GetNode<Sprite2D>("Health1/Health2/Health2"); //TODO there is a clear way to implement healt bars
+			if(health < 3)
+			{
+				GetNode<Sprite2D>("Health1/Health2").Hide();
+			}
+			GetNode<Sprite2D>("Health1/Health2/Health3").Hide();
 			//GetNode<Label>("Health").SetText("New text"); // Remove health
 			_animatedSprite.Play("idle_death");
 			animation_locked = true;

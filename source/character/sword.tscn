@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dvvaev7gupcms"]
+[gd_scene load_steps=64 format=3 uid="uid://dvvaev7gupcms"]
 
 [ext_resource type="Script" path="res://character/character.cs" id="1_oawh3"]
 [ext_resource type="Texture2D" uid="uid://c5c8sj5s52mxr" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Attack-01/Attack-01-Sheet.png" id="2_8avbi"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cx8pm0f37r27y" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Jump-Start/Jump-Start-Sheet.png" id="5_lrfcy"]
 [ext_resource type="Texture2D" uid="uid://benf3odv62lf7" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Jumlp-All/Jump-All-Sheet.png" id="6_j7tas"]
 [ext_resource type="Script" path="res://character/CollisionShape2D.cs" id="9_01ji7"]
+[ext_resource type="Texture2D" uid="uid://dgw4ggqngiofs" path="res://src/pngegg (1).png" id="11_1tvf1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ovl"]
 size = Vector2(18.5, 44)
@@ -439,12 +440,28 @@ position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_vj6ej")
 
 [node name="Health" type="Label" parent="."]
+visible = false
 offset_left = -32.0
 offset_top = -53.0
 offset_right = 37.0
 offset_bottom = -27.0
 text = "Test"
 script = SubResource("CSharpScript_2hrhu")
+
+[node name="Health1" type="Sprite2D" parent="."]
+position = Vector2(-6, -40)
+scale = Vector2(0.015625, 0.012207)
+texture = ExtResource("11_1tvf1")
+
+[node name="Health2" type="Sprite2D" parent="Health1"]
+position = Vector2(512, -0.000488281)
+scale = Vector2(0.925526, 0.967034)
+texture = ExtResource("11_1tvf1")
+
+[node name="Health3" type="Sprite2D" parent="Health1/Health2"]
+position = Vector2(553.188, 0.000488281)
+scale = Vector2(1.07007, 1.0253)
+texture = ExtResource("11_1tvf1")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
