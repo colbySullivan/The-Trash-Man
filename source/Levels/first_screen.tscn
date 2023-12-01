@@ -1554,8 +1554,8 @@ motion_mirroring = Vector2(672, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 texture_repeat = 3
-position = Vector2(80, -18)
-scale = Vector2(2, 2)
+position = Vector2(80, 9)
+scale = Vector2(2, 1.71875)
 texture = ExtResource("5_yy7d6")
 
 [node name="Level Label" type="Label" parent="."]
