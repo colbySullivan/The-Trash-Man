@@ -1572,5 +1572,11 @@ theme_override_font_sizes/font_size = 8
 text = "WASD -> move
 E -> attack"
 
+[node name="Danny3" parent="." groups=["Mobs"] instance=ExtResource("4_f4xs7")]
+position = Vector2(2226, 308)
+
+[node name="Danny4" parent="." groups=["Mobs"] instance=ExtResource("4_f4xs7")]
+position = Vector2(2678, 336)
+
 [connection signal="area_entered" from="Fall area" to="Character" method="_on_fall_area_area_entered"]
 [connection signal="area_entered" from="Portal" to="Character" method="_on_portal_body_entered"]
