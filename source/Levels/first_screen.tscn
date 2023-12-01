@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://2qa23a5lxf1q"]
+[gd_scene load_steps=10 format=3 uid="uid://2qa23a5lxf1q"]
 
 [ext_resource type="PackedScene" uid="uid://dvvaev7gupcms" path="res://character/sword.tscn" id="2_2qb6e"]
 [ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_75ko3"]
@@ -1484,7 +1484,10 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ivihc")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bqxg"]
-size = Vector2(46.5, 75.75)
+size = Vector2(21.625, 65.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbsx2"]
+size = Vector2(97, 32)
 
 [node name="First Screen" type="Node2D"]
 
@@ -1511,9 +1514,11 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="Danny" parent="." groups=["Mobs"] instance=ExtResource("4_f4xs7")]
 position = Vector2(319, 516)
+collision_layer = 257
 
 [node name="Danny2" parent="." groups=["Mobs"] instance=ExtResource("4_f4xs7")]
 position = Vector2(621, 440)
+collision_layer = 257
 
 [node name="Fall area" type="Area2D" parent="."]
 position = Vector2(0, 1)
@@ -1568,18 +1573,40 @@ text = "Level 1-1"
 [node name="Instruction label" type="Label" parent="Level Label"]
 layout_mode = 0
 offset_left = 1.0
-offset_top = 19.0
-offset_right = 41.0
-offset_bottom = 42.0
+offset_top = 21.0
+offset_right = 57.0
+offset_bottom = 51.0
 theme_override_font_sizes/font_size = 8
 text = "WASD -> move
 E -> attack"
 
 [node name="Danny3" parent="." groups=["Mobs"] instance=ExtResource("4_f4xs7")]
 position = Vector2(2226, 308)
+collision_layer = 257
 
 [node name="Danny4" parent="." groups=["Mobs"] instance=ExtResource("4_f4xs7")]
 position = Vector2(2678, 336)
+collision_layer = 257
+
+[node name="Danny wall" type="StaticBody2D" parent="."]
+position = Vector2(293, 511)
+collision_layer = 257
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Danny wall"]
+position = Vector2(1612, -58)
+shape = SubResource("RectangleShape2D_hbsx2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Danny wall"]
+position = Vector2(734.5, 1)
+shape = SubResource("RectangleShape2D_hbsx2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Danny wall"]
+position = Vector2(1177, 2)
+shape = SubResource("RectangleShape2D_hbsx2")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Danny wall"]
+position = Vector2(2905, 0)
+shape = SubResource("RectangleShape2D_hbsx2")
 
 [connection signal="area_entered" from="Fall area" to="Character" method="_on_fall_area_area_entered"]
 [connection signal="area_entered" from="Portal" to="Character" method="_on_portal_body_entered"]
