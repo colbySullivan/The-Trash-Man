@@ -188,6 +188,7 @@ public partial class character : CharacterBody2D
 	{
 		if(body.IsInGroup("Mobs"))
 		{
+			//GetNode<Label>("Health").SetText("New text"); // Remove health
 			_animatedSprite.Play("idle_death");
 			animation_locked = true;
 			GD.Print(body.Name);

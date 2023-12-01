@@ -1555,12 +1555,22 @@ position = Vector2(80, -18)
 scale = Vector2(2, 2)
 texture = ExtResource("5_yy7d6")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 224.0
-offset_top = 409.0
-offset_right = 284.0
-offset_bottom = 443.0
+[node name="Level Label" type="Label" parent="."]
+offset_left = 250.0
+offset_top = 427.0
+offset_right = 318.0
+offset_bottom = 461.0
 text = "Level 1-1"
+
+[node name="Instruction label" type="Label" parent="Level Label"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 19.0
+offset_right = 41.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 8
+text = "WASD -> move
+E -> attack"
 
 [connection signal="area_entered" from="Fall area" to="Character" method="_on_fall_area_area_entered"]
 [connection signal="area_entered" from="Portal" to="Character" method="_on_portal_body_entered"]

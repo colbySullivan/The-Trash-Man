@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://dvvaev7gupcms"]
+[gd_scene load_steps=63 format=3 uid="uid://dvvaev7gupcms"]
 
 [ext_resource type="Script" path="res://character/character.cs" id="1_oawh3"]
 [ext_resource type="Texture2D" uid="uid://c5c8sj5s52mxr" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Attack-01/Attack-01-Sheet.png" id="2_8avbi"]
@@ -387,6 +387,24 @@ size = Vector2(31, 36)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vj6ej"]
 height = 46.0
 
+[sub_resource type="CSharpScript" id="CSharpScript_2hrhu"]
+script/source = "using Godot;
+using System;
+
+public partial class Label : Godot.Label
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(11, 20)
 script = ExtResource("1_oawh3")
@@ -420,11 +438,13 @@ visibility_layer = 5
 position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_vj6ej")
 
-[node name="Label" type="Label" parent="."]
+[node name="Health" type="Label" parent="."]
 offset_left = -32.0
 offset_top = -53.0
 offset_right = 37.0
 offset_bottom = -27.0
+text = "Test"
+script = SubResource("CSharpScript_2hrhu")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
