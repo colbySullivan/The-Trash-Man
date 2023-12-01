@@ -4,7 +4,7 @@ using System;
 public partial class character : CharacterBody2D
 {
 	[Export]
-	public float Speed = 200.0f;
+	public float Speed = 125.0f;
 	
 	[Export]
 	public float JumpVelocity = -300.0f;

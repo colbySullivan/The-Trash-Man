@@ -1534,11 +1534,13 @@ position = Vector2(3390, 485)
 shape = SubResource("RectangleShape2D_1bqxg")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_limit_begin = Vector2(2.08165e-12, 270)
+scroll_limit_end = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(235, 466)
 motion_scale = Vector2(0.9, 0.9)
-motion_mirroring = Vector2(1050, 1080)
+motion_mirroring = Vector2(1050, 2.08165e-12)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
@@ -1548,7 +1550,7 @@ texture = ExtResource("5_fxav6")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(235, 466)
-motion_mirroring = Vector2(672, 500)
+motion_mirroring = Vector2(672, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 texture_repeat = 3
