@@ -87,6 +87,7 @@ size = Vector2(66, 73)
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(11, 20)
 collision_layer = 257
+collision_mask = 257
 script = ExtResource("1_xm75j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -102,6 +103,7 @@ frame_progress = 0.548227
 
 [node name="interactionArea" type="Area2D" parent="."]
 position = Vector2(0, -1)
+collision_layer = 257
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactionArea"]
 position = Vector2(-0.5, -2)

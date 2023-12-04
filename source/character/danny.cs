@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 public partial class danny : CharacterBody2D
-{
+{	
 	public const float SpeedRight = 100.0f;
 	public const float SpeedLeft = -100.0f;
 	public const float JumpVelocity = -400.0f;
@@ -21,6 +21,27 @@ public partial class danny : CharacterBody2D
 	
 	Random r = new Random();
 	
+	[Export]
+	public Vector2 initalPos = new Vector2(621,540);
+	
+	//public override void _Ready()
+	//{
+		// Spawn more class instances
+		//danny mob = MobScene.Instantiate<danny>();
+		//var dannyScene = ResourceLoader.Load("res://character/danny.tscn");
+		//instance.SetPos = initalPos;
+		// Store the reference to the SpawnLocation node.
+		//var mobSpawnLocation = GetNode<PathFollow3D>("SpawnPath/SpawnLocation");
+		//for(int i = 4; i < 4; i++){
+			//mobSpawnLocation.ProgressRatio = GD.Randf();
+			//Vector2 playerPosition = GetNode<CharacterBody2D>("Character").Position;
+			//mob.Initialize(mobSpawnLocation.Position, playerPosition);
+			// Spawn the mob by adding it to the Main scene.
+			//mob.playerPos = playerPosition;
+			//GD.Print("created new danny instance");
+			//AddChild(mob);
+		//}
+	//}
 	public override void _PhysicsProcess(double delta)
 	{
 		//var dannynode = GetTree().GetRoot().GetNode("Character");
