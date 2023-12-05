@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bwfv5uip21sup"
+path="res://.godot/imported/dannysprite.aseprite-78a7642a928f5c1f8f0b2ed741120286.res"
+
+[deps]
+
+source_file="res://src/dannysprite.aseprite"
+dest_files=["res://.godot/imported/dannysprite.aseprite-78a7642a928f5c1f8f0b2ed741120286.res"]
+
+[params]
+

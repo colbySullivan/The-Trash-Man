@@ -1,0 +1,139 @@
+[gd_scene load_steps=14 format=3 uid="uid://doetqabc3dck7"]
+
+[ext_resource type="Script" path="res://character/character.cs" id="1_e5ooo"]
+[ext_resource type="Script" path="res://character/CollisionShape2D.cs" id="10_rq420"]
+[ext_resource type="Texture2D" uid="uid://dgw4ggqngiofs" path="res://src/pngegg (1).png" id="11_nghr7"]
+[ext_resource type="Texture2D" uid="uid://cri731ntpba4h" path="res://character/dannysprite.png" id="12_igkw0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ovl"]
+size = Vector2(18.5, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ek4e"]
+atlas = ExtResource("12_igkw0")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uxue"]
+atlas = ExtResource("12_igkw0")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_watid"]
+atlas = ExtResource("12_igkw0")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmrs4"]
+atlas = ExtResource("12_igkw0")
+region = Rect2(32, 48, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40nhh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ek4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uxue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_watid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmrs4")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5jyf"]
+size = Vector2(31, 36)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vj6ej"]
+height = 46.0
+
+[sub_resource type="CSharpScript" id="CSharpScript_2hrhu"]
+script/source = "using Godot;
+using System;
+
+public partial class Label : Godot.Label
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(11, 20)
+script = ExtResource("1_e5ooo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_h7ovl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-11, -23)
+scale = Vector2(0.906, 1)
+sprite_frames = SubResource("SpriteFrames_40nhh")
+animation = &"run"
+centered = false
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"op_exp": false,
+"source": "res://src/dannysprite.aseprite"
+}
+
+[node name="SwordArea" type="Area2D" parent="."]
+position = Vector2(25, 2.08165e-12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordArea"]
+position = Vector2(2.5, -2)
+shape = SubResource("RectangleShape2D_m5jyf")
+disabled = true
+script = ExtResource("10_rq420")
+
+[node name="AreaHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHitbox"]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_vj6ej")
+
+[node name="Health" type="Label" parent="."]
+visible = false
+offset_left = -32.0
+offset_top = -53.0
+offset_right = 37.0
+offset_bottom = -27.0
+text = "Test"
+script = SubResource("CSharpScript_2hrhu")
+
+[node name="Health1" type="Sprite2D" parent="."]
+position = Vector2(-6, -40)
+scale = Vector2(0.015625, 0.012207)
+texture = ExtResource("11_nghr7")
+
+[node name="Health2" type="Sprite2D" parent="Health1"]
+position = Vector2(512, -0.000488281)
+scale = Vector2(0.925526, 0.967034)
+texture = ExtResource("11_nghr7")
+
+[node name="Health3" type="Sprite2D" parent="Health1/Health2"]
+position = Vector2(553.188, 0.000488281)
+scale = Vector2(1.07007, 1.0253)
+texture = ExtResource("11_nghr7")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="body_entered" from="AreaHitbox" to="." method="_on_area_hitbox_body_entered"]

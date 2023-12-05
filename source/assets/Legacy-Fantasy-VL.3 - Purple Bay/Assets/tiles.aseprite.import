@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d2nja1x3rcbry"
+path="res://.godot/imported/tiles.aseprite-bafb9243c921edce0386f73312c944c8.res"
+
+[deps]
+
+source_file="res://assets/Legacy-Fantasy-VL.3 - Purple Bay/Assets/tiles.aseprite"
+dest_files=["res://.godot/imported/tiles.aseprite-bafb9243c921edce0386f73312c944c8.res"]
+
+[params]
+

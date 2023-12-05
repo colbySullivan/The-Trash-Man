@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://ce3mx2e3l74bj"
+path="res://.godot/imported/walk-Sheet.aseprite-748b7e272bd5931cfe228f452f3812f5.res"
+
+[deps]
+
+source_file="res://assets/Original Legacy-Fantasy - High Forest 2.3/Mob/Snail/walk-Sheet.aseprite"
+dest_files=["res://.godot/imported/walk-Sheet.aseprite-748b7e272bd5931cfe228f452f3812f5.res"]
+
+[params]
+

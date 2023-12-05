@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cf17toofdac3e"
+path="res://.godot/imported/Tiles.aseprite-ac2ce24f04d972eacdef165baafd9c5a.res"
+
+[deps]
+
+source_file="res://assets/Legacy Fantasy - Deadwind Pass/Assets/Tiles.aseprite"
+dest_files=["res://.godot/imported/Tiles.aseprite-ac2ce24f04d972eacdef165baafd9c5a.res"]
+
+[params]
+

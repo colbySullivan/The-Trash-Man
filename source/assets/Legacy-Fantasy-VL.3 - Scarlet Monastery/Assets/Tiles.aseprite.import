@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bt28laoeby1s8"
+path="res://.godot/imported/Tiles.aseprite-5fcd089871d323ba981840e3a100f15c.res"
+
+[deps]
+
+source_file="res://assets/Legacy-Fantasy-VL.3 - Scarlet Monastery/Assets/Tiles.aseprite"
+dest_files=["res://.godot/imported/Tiles.aseprite-5fcd089871d323ba981840e3a100f15c.res"]
+
+[params]
+

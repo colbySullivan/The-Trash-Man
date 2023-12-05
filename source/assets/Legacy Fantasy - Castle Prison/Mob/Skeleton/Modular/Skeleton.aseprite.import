@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://f4325xvjr1da"
+path="res://.godot/imported/Skeleton.aseprite-4c8b3a92b467ac241b63f1bbc5a1bc19.res"
+
+[deps]
+
+source_file="res://assets/Legacy Fantasy - Castle Prison/Mob/Skeleton/Modular/Skeleton.aseprite"
+dest_files=["res://.godot/imported/Skeleton.aseprite-4c8b3a92b467ac241b63f1bbc5a1bc19.res"]
+
+[params]
+

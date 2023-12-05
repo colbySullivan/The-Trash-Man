@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dbmlftbpxq717"
+path="res://.godot/imported/Walk.aseprite-c6885149a521bcb129c1e8c36d2b43b9.res"
+
+[deps]
+
+source_file="res://assets/Legacy Fantasy - Castle Prison/Mob/Skeleton/Walk/Walk.aseprite"
+dest_files=["res://.godot/imported/Walk.aseprite-c6885149a521bcb129c1e8c36d2b43b9.res"]
+
+[params]
+

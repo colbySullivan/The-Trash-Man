@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cgxy1lhorhsly"
+path="res://.godot/imported/Tiles.aseprite-af5f763ee4c8d8a2acb0f332eeb423b4.res"
+
+[deps]
+
+source_file="res://assets/Legacy-Fantasy-VL.1 - Kingdom Fortress/Assets/Tiles.aseprite"
+dest_files=["res://.godot/imported/Tiles.aseprite-af5f763ee4c8d8a2acb0f332eeb423b4.res"]
+
+[params]
+

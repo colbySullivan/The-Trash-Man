@@ -421,6 +421,15 @@ sprite_frames = SubResource("SpriteFrames_xvpxj")
 animation = &"idle"
 autoplay = "idle"
 centered = false
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"op_exp": true,
+"source": ""
+}
 
 [node name="SwordArea" type="Area2D" parent="."]
 position = Vector2(25, 2.08165e-12)
