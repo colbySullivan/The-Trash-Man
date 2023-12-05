@@ -84,7 +84,7 @@ focus_neighbor_bottom = NodePath("../Start")
 text = "Quit"
 script = SubResource("CSharpScript_35nag")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.396078, 0.396078, 0.396078, 0.890196)
 self_modulate = Color(0.74902, 0.74902, 0.74902, 0.737255)
 z_index = -3
