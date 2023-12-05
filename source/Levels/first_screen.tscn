@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://2qa23a5lxf1q"]
 
 [ext_resource type="PackedScene" uid="uid://dvvaev7gupcms" path="res://character/sword.tscn" id="2_2qb6e"]
-[ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_75ko3"]
+[ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Original Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_75ko3"]
 [ext_resource type="PackedScene" uid="uid://bym18rutiea3" path="res://character/danny.tscn" id="4_f4xs7"]
 [ext_resource type="Texture2D" uid="uid://dhyacq3amaea" path="res://assets/Legacy Fantasy - Kingdom Fortress - Update/Background/02.png" id="5_fxav6"]
 [ext_resource type="Texture2D" uid="uid://bwgu10y30tkp6" path="res://assets/Legacy Fantasy - Kingdom Fortress - Update/Background/Background.2-export.png" id="5_yy7d6"]
@@ -1513,11 +1513,9 @@ position = Vector2(225, 501)
 remote_path = NodePath("../../Camera2D")
 
 [node name="Danny" parent="." groups=["Mobs"] instance=ExtResource("4_f4xs7")]
-visible = false
 position = Vector2(319, 516)
 
 [node name="Danny2" parent="." groups=["Mobs"] instance=ExtResource("4_f4xs7")]
-visible = false
 position = Vector2(621, 440)
 
 [node name="Fall area" type="Area2D" parent="."]
@@ -1570,7 +1568,7 @@ offset_right = 318.0
 offset_bottom = 461.0
 text = "Level 1-1"
 
-[node name="Instruction label" type="Label" parent="Level Label"]
+[node name="Move label" type="Label" parent="Level Label"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 21.0
@@ -1578,14 +1576,38 @@ offset_right = 57.0
 offset_bottom = 51.0
 theme_override_font_sizes/font_size = 8
 text = "WASD -> move
-E -> attack"
+"
+
+[node name="Attack label" type="Label" parent="Level Label"]
+offset_left = 57.0
+offset_top = 54.0
+offset_right = 113.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 8
+text = "E -> Attack
+"
+
+[node name="Jump label" type="Label" parent="Level Label"]
+offset_left = 137.0
+offset_top = 4.0
+offset_right = 193.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 8
+text = "Space -> Jump"
+
+[node name="Double Jump" type="Label" parent="Level Label"]
+offset_left = 245.0
+offset_top = -17.0
+offset_right = 301.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 8
+text = "Press Space twice 
+to double Jump"
 
 [node name="Danny3" parent="." groups=["Mobs"] instance=ExtResource("4_f4xs7")]
-visible = false
 position = Vector2(2226, 308)
 
 [node name="Danny4" parent="." groups=["Mobs"] instance=ExtResource("4_f4xs7")]
-visible = false
 position = Vector2(2678, 336)
 
 [node name="Danny wall" type="StaticBody2D" parent="."]
