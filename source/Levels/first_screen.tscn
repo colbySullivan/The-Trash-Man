@@ -1632,9 +1632,9 @@ shape = SubResource("RectangleShape2D_hbsx2")
 position = Vector2(-34, 1)
 shape = SubResource("RectangleShape2D_hbsx2")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("6_genyy")]
+[node name="sworddanny" parent="." instance=ExtResource("6_genyy")]
 position = Vector2(162, 503)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="sworddanny"]
 position = Vector2(-11, -20)
 remote_path = NodePath("../../Camera2D")

@@ -105,25 +105,25 @@ public partial class danny : CharacterBody2D
 	// Character on left of danny
 	private void _on_attack_range_body_entered_left(Node2D body)
 	{
-		if(body.Name == "Character") // Insures that other collisons don't count
+		if(body.Name == "sworddanny") // Insures that other collisons don't count
 			attackState = "fightLeft";	
 	}
 	private void _on_interaction_area_body_exited(Node2D body)
 	{
-		if(body.Name == "Character")
+		if(body.Name == "sworddanny")
 			// Return to random state when user is outside zone
 			attackState = "wonder";
 	}	
 	// Character on right of danny
 	private void _on_attack_range_body_entered_right(Node2D body)
 	{
-		if(body.Name == "Character")
+		if(body.Name == "sworddanny")
 			attackState = "fightRight";
 	}	
 	private void _on_stomp_area_body_entered(Node2D body)
 	{
 		// Character stomped on Danny
-		if(body.Name == "Character")
+		if(body.Name == "sworddanny")
 		{
 			QueueFree();
 		}

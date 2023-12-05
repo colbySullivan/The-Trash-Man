@@ -142,12 +142,11 @@ public partial class sworddanny : CharacterBody2D
 	public void jump()
 	{
 		velocity.Y = JumpVelocity;
-		_animatedSprite.Play("jump_start");
 		animation_locked = true;
 	}
 	public void land()
 	{
-		_animatedSprite.Play("jump_end");
+		_animatedSprite.Play("idle");
 		animation_locked = true;
 	}
 	
