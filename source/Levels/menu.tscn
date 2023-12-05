@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://724ctri0evky"]
+[gd_scene load_steps=5 format=3 uid="uid://724ctri0evky"]
 
 [ext_resource type="Script" path="res://Levels/menu.cs" id="1_v48xj"]
+[ext_resource type="Texture2D" uid="uid://c85k12kbi5clk" path="res://src/menuscreen.PNG" id="2_76qxs"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_p61d0"]
 script/source = "using Godot;
@@ -73,13 +74,32 @@ grow_vertical = 2
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
 text = "Start"
 script = SubResource("CSharpScript_p61d0")
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../Start")
 text = "Quit"
 script = SubResource("CSharpScript_35nag")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.396078, 0.396078, 0.396078, 0.890196)
+self_modulate = Color(0.74902, 0.74902, 0.74902, 0.737255)
+z_index = -3
+position = Vector2(301.875, 179.75)
+scale = Vector2(0.242354, 0.194026)
+texture = ExtResource("2_76qxs")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 9.0
+offset_right = 363.0
+offset_bottom = 61.0
+text = "Welcome to Dodge Danny 2
+         Electric Boogaloo"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -7,7 +7,7 @@ public partial class menu : Control
 	public override void _Ready()
 	{
 		// Can select with ui arrows
-		GetNode<Button>("Quit").GrabFocus();
+		GetNode<Button>("Start").GrabFocus();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
