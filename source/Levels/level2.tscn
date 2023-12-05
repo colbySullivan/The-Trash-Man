@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bv7vpnetswain" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/Background.png" id="1_f2ifp"]
 [ext_resource type="Texture2D" uid="uid://beuk8c5lk1eq4" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/Tiles.png" id="2_swdog"]
-[ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_wqccq"]
+[ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Original Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_wqccq"]
 [ext_resource type="PackedScene" uid="uid://dvvaev7gupcms" path="res://character/sword.tscn" id="3_lll6b"]
 [ext_resource type="PackedScene" uid="uid://bym18rutiea3" path="res://character/danny.tscn" id="4_ht8o5"]
 

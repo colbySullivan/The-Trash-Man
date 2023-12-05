@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://2qa23a5lxf1q"]
 
 [ext_resource type="PackedScene" uid="uid://dvvaev7gupcms" path="res://character/sword.tscn" id="2_2qb6e"]
-[ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_75ko3"]
+[ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Original Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_75ko3"]
 [ext_resource type="PackedScene" uid="uid://bym18rutiea3" path="res://character/danny.tscn" id="4_f4xs7"]
 [ext_resource type="Texture2D" uid="uid://dhyacq3amaea" path="res://assets/Legacy Fantasy - Kingdom Fortress - Update/Background/02.png" id="5_fxav6"]
 [ext_resource type="Texture2D" uid="uid://bwgu10y30tkp6" path="res://assets/Legacy Fantasy - Kingdom Fortress - Update/Background/Background.2-export.png" id="5_yy7d6"]
