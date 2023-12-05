@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bym18rutiea3"]
+[gd_scene load_steps=17 format=3 uid="uid://bym18rutiea3"]
 
 [ext_resource type="Script" path="res://character/danny.cs" id="1_xm75j"]
 [ext_resource type="Texture2D" uid="uid://cxwgjvvsbg72k" path="res://src/dannysprite.png" id="2_r0exb"]
@@ -76,13 +76,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q4whe"]
-size = Vector2(33, 20)
+size = Vector2(33, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lm3iv"]
 size = Vector2(80, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tm1ve"]
 size = Vector2(66, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsypa"]
+size = Vector2(20, 3)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(11, 20)
@@ -106,7 +109,7 @@ position = Vector2(0, -1)
 collision_layer = 257
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactionArea"]
-position = Vector2(-0.5, -2)
+position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_q4whe")
 
 [node name="AttackRangeRight" type="Area2D" parent="."]
@@ -121,6 +124,14 @@ shape = SubResource("RectangleShape2D_lm3iv")
 position = Vector2(-50, -25.5)
 shape = SubResource("RectangleShape2D_tm1ve")
 
+[node name="StompArea" type="Area2D" parent="."]
+position = Vector2(0, -1)
+collision_layer = 257
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompArea"]
+position = Vector2(0, -11.5)
+shape = SubResource("RectangleShape2D_gsypa")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_shape_entered" from="interactionArea" to="." method="_on_interaction_area_area_shape_entered"]
 [connection signal="body_entered" from="interactionArea" to="." method="_on_interaction_area_body_entered"]
@@ -128,3 +139,4 @@ shape = SubResource("RectangleShape2D_tm1ve")
 [connection signal="body_exited" from="AttackRangeRight" to="." method="_on_interaction_area_body_exited"]
 [connection signal="body_entered" from="AttackRangeLeft" to="." method="_on_attack_range_body_entered_left"]
 [connection signal="body_exited" from="AttackRangeLeft" to="." method="_on_interaction_area_body_exited"]
+[connection signal="body_entered" from="StompArea" to="." method="_on_stomp_area_body_entered"]

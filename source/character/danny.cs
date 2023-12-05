@@ -120,4 +120,14 @@ public partial class danny : CharacterBody2D
 		if(body.Name == "Character")
 			attackState = "fightRight";
 	}	
+	private void _on_stomp_area_body_entered(Node2D body)
+	{
+		// Character stomped on Danny
+		if(body.Name == "Character")
+		{
+			QueueFree();
+		}
+			
+	}
 }
+

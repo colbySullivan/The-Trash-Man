@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://724ctri0evky"]
 
-[ext_resource type="Script" path="res://Levels/menu.cs" id="1_v48xj"]
+[ext_resource type="Script" path="res://character/menu.cs" id="1_lp3l2"]
 [ext_resource type="Texture2D" uid="uid://c85k12kbi5clk" path="res://src/menuscreen.PNG" id="2_76qxs"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_p61d0"]
@@ -56,7 +56,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_v48xj")
+script = ExtResource("1_lp3l2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -84,7 +84,7 @@ focus_neighbor_bottom = NodePath("../Start")
 text = "Quit"
 script = SubResource("CSharpScript_35nag")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.396078, 0.396078, 0.396078, 0.890196)
 self_modulate = Color(0.74902, 0.74902, 0.74902, 0.737255)
 z_index = -3
