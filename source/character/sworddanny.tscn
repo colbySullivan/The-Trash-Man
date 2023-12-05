@@ -1,87 +1,68 @@
-[gd_scene load_steps=14 format=3 uid="uid://doetqabc3dck7"]
+[gd_scene load_steps=13 format=3 uid="uid://doetqabc3dck7"]
 
-[ext_resource type="Script" path="res://character/character.cs" id="1_e5ooo"]
+[ext_resource type="Script" path="res://character/sworddanny.cs" id="1_x14lv"]
 [ext_resource type="Script" path="res://character/CollisionShape2D.cs" id="10_rq420"]
 [ext_resource type="Texture2D" uid="uid://dgw4ggqngiofs" path="res://src/pngegg (1).png" id="11_nghr7"]
 [ext_resource type="Texture2D" uid="uid://cri731ntpba4h" path="res://character/dannysprite.png" id="12_igkw0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ovl"]
-size = Vector2(18.5, 44)
+size = Vector2(18.5, 30)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ek4e"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_scw2i"]
 atlas = ExtResource("12_igkw0")
 region = Rect2(0, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7uxue"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk6l6"]
 atlas = ExtResource("12_igkw0")
 region = Rect2(32, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_watid"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cp5ed"]
 atlas = ExtResource("12_igkw0")
 region = Rect2(0, 48, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmrs4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf122"]
 atlas = ExtResource("12_igkw0")
 region = Rect2(32, 48, 32, 48)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_40nhh"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_22q7b"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2ek4e")
+"texture": SubResource("AtlasTexture_scw2i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7uxue")
+"texture": SubResource("AtlasTexture_xk6l6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_watid")
+"texture": SubResource("AtlasTexture_cp5ed")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mmrs4")
+"texture": SubResource("AtlasTexture_wf122")
 }],
 "loop": true,
-"name": &"run",
+"name": &"idle",
 "speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m5jyf"]
-size = Vector2(31, 36)
+size = Vector2(31, 27)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vj6ej"]
-height = 46.0
-
-[sub_resource type="CSharpScript" id="CSharpScript_2hrhu"]
-script/source = "using Godot;
-using System;
-
-public partial class Label : Godot.Label
-{
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-}
-"
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(11, 20)
-script = ExtResource("1_e5ooo")
+script = ExtResource("1_x14lv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 2)
+position = Vector2(1, 9)
 shape = SubResource("RectangleShape2D_h7ovl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-11, -23)
-scale = Vector2(0.906, 1)
-sprite_frames = SubResource("SpriteFrames_40nhh")
-animation = &"run"
+position = Vector2(-11, -10)
+scale = Vector2(0.71875, 0.729167)
+sprite_frames = SubResource("SpriteFrames_22q7b")
+animation = &"idle"
 centered = false
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
@@ -97,7 +78,7 @@ metadata/_aseprite_wizard_config_ = {
 position = Vector2(25, 2.08165e-12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordArea"]
-position = Vector2(2.5, -2)
+position = Vector2(1, 10.5)
 shape = SubResource("RectangleShape2D_m5jyf")
 disabled = true
 script = ExtResource("10_rq420")
@@ -107,17 +88,8 @@ script = ExtResource("10_rq420")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaHitbox"]
 light_mask = 5
 visibility_layer = 5
-position = Vector2(1, 0)
+position = Vector2(1, 9)
 shape = SubResource("CapsuleShape2D_vj6ej")
-
-[node name="Health" type="Label" parent="."]
-visible = false
-offset_left = -32.0
-offset_top = -53.0
-offset_right = 37.0
-offset_bottom = -27.0
-text = "Test"
-script = SubResource("CSharpScript_2hrhu")
 
 [node name="Health1" type="Sprite2D" parent="."]
 position = Vector2(-6, -40)
