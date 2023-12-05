@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Platform shooter"
-run/main_scene="res://Levels/first_screen.tscn"
+run/main_scene="res://Levels/menu.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

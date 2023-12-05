@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bv7vpnetswain" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/Background.png" id="1_f2ifp"]
 [ext_resource type="Texture2D" uid="uid://beuk8c5lk1eq4" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/Tiles.png" id="2_swdog"]
-[ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_wqccq"]
+[ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Original Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_wqccq"]
 [ext_resource type="PackedScene" uid="uid://dvvaev7gupcms" path="res://character/sword.tscn" id="3_lll6b"]
 [ext_resource type="PackedScene" uid="uid://bym18rutiea3" path="res://character/danny.tscn" id="4_ht8o5"]
 
@@ -2457,7 +2457,7 @@ shape = SubResource("RectangleShape2D_1bqxg")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(235, 466)
 motion_scale = Vector2(0.9, 0.9)
-motion_mirroring = Vector2(600, 1080)
+motion_mirroring = Vector2(600, 0)
 
 [node name="Backgrounds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2

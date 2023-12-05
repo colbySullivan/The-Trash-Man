@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=3 uid="uid://724ctri0evky"]
+
+[ext_resource type="Script" path="res://Levels/menu.cs" id="1_v48xj"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_p61d0"]
+script/source = "using Godot;
+using System;
+
+public partial class Start : Button
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+	private void _on_pressed()
+	{
+		GetTree().ChangeSceneToFile(\"res://Levels/first_screen.tscn\");
+	}
+}
+
+
+"
+
+[sub_resource type="CSharpScript" id="CSharpScript_35nag"]
+script/source = "using Godot;
+using System;
+
+public partial class Quit : Button
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+	private void _on_pressed()
+	{
+		GetTree().Quit();
+	}
+}
+"
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v48xj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -33.0
+offset_right = 23.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start"
+script = SubResource("CSharpScript_p61d0")
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+script = SubResource("CSharpScript_35nag")
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
