@@ -1639,3 +1639,6 @@ shape = SubResource("RectangleShape2D_hbsx2")
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Danny wall"]
 position = Vector2(-34, 1)
 shape = SubResource("RectangleShape2D_hbsx2")
+
+[connection signal="area_entered" from="Fall area" to="sworddanny" method="_on_fall_area_area_entered"]
+[connection signal="area_entered" from="Portal" to="sworddanny" method="_on_portal_body_entered"]

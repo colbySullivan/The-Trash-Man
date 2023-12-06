@@ -224,7 +224,7 @@ public partial class sworddanny : CharacterBody2D
 	{
 		GD.Print(body.Name);
 		if(body.Name == "AreaHitbox")
-			GetTree().ChangeSceneToFile("res://Levels/level1.tscn");
+			GetTree().ChangeSceneToFile("res://Levels/level2.tscn");
 	}
 	// Restart game
 	private void restart_portal(Node2D body)

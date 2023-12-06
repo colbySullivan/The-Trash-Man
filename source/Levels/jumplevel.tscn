@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://otcre6yvljao"]
+[gd_scene load_steps=10 format=3 uid="uid://cps7fg0nygi7l"]
 
 [ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Original Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_drufn"]
 [ext_resource type="PackedScene" uid="uid://dvvaev7gupcms" path="res://character/sword.tscn" id="2_15nhs"]
