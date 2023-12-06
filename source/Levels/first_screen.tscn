@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bym18rutiea3" path="res://character/danny.tscn" id="4_f4xs7"]
 [ext_resource type="Texture2D" uid="uid://dhyacq3amaea" path="res://assets/Legacy Fantasy - Kingdom Fortress - Update/Background/02.png" id="5_fxav6"]
 [ext_resource type="Texture2D" uid="uid://bwgu10y30tkp6" path="res://assets/Legacy Fantasy - Kingdom Fortress - Update/Background/Background.2-export.png" id="5_yy7d6"]
-[ext_resource type="PackedScene" uid="uid://doetqabc3dck7" path="res://character/sworddanny.tscn" id="6_genyy"]
+[ext_resource type="PackedScene" path="res://character/sworddanny.tscn" id="6_genyy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ivihc"]
 texture = ExtResource("2_75ko3")
@@ -1509,6 +1509,13 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
+[node name="sworddanny" parent="." instance=ExtResource("6_genyy")]
+position = Vector2(162, 503)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="sworddanny"]
+position = Vector2(-11, -20)
+remote_path = NodePath("../../Camera2D")
+
 [node name="Danny" parent="." groups=["Mobs"] instance=ExtResource("4_f4xs7")]
 position = Vector2(319, 516)
 
@@ -1639,9 +1646,5 @@ shape = SubResource("RectangleShape2D_hbsx2")
 position = Vector2(-34, 1)
 shape = SubResource("RectangleShape2D_hbsx2")
 
-[node name="sworddanny" parent="." instance=ExtResource("6_genyy")]
-position = Vector2(162, 503)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="sworddanny"]
-position = Vector2(-11, -20)
-remote_path = NodePath("../../Camera2D")
+[connection signal="area_entered" from="Fall area" to="sworddanny" method="_on_fall_area_area_entered"]
+[connection signal="area_entered" from="Portal" to="sworddanny" method="_on_portal_body_entered"]

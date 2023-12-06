@@ -232,4 +232,3 @@ public partial class sworddanny : CharacterBody2D
 		
 	}
 }
-

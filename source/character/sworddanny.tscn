@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://doetqabc3dck7"]
+[gd_scene load_steps=17 format=3 uid="uid://dsxjhi2giui2f"]
 
 [ext_resource type="Script" path="res://character/sworddanny.cs" id="1_x14lv"]
 [ext_resource type="Script" path="res://character/CollisionShape2D.cs" id="10_rq420"]
