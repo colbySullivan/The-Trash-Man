@@ -1540,7 +1540,6 @@ position = Vector2(174, 21)
 shape = SubResource("RectangleShape2D_1bqxg")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 scroll_limit_begin = Vector2(2.08165e-12, 270)
 scroll_limit_end = Vector2(2.08165e-12, 2.08165e-12)
 
