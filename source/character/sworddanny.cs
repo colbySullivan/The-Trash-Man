@@ -46,10 +46,13 @@ public partial class sworddanny : CharacterBody2D
 	// Used for sword collision
 	public bool facing_left = false;
 	
+	private String _sceneName;
+	
 	public override void _Ready()
 	{
 		// Access to animation globally
 		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_sceneName = GetTree().CurrentScene.Name;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -62,6 +65,7 @@ public partial class sworddanny : CharacterBody2D
 		{
 			velocity.Y += gravity * (float)delta;
 			was_in_air = true;
+			GD.Print(_sceneName);
 		}
 			
 		else
@@ -97,13 +101,16 @@ public partial class sworddanny : CharacterBody2D
 		// Need vector to satisify animation updating
 		direction = Input.GetVector("left", "right", "up", "down");
 		// If player is in air they can swing and move
-		if (direction != Vector2.Zero && (!is_swinging || !IsOnFloor()))
+		if(_sceneName != "First Screen")
 		{
-			velocity.X = direction.X * Speed;
-		}
-		else
-		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+			if (direction != Vector2.Zero && (!is_swinging || !IsOnFloor()))
+			{
+				velocity.X = direction.X * Speed;
+			}
+			else
+			{
+				velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+			}
 		}
 		
 		Velocity = velocity;
