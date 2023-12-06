@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://otcre6yvljao"]
+[gd_scene load_steps=11 format=3 uid="uid://otcre6yvljao"]
 
 [ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Original Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_mvb50"]
+[ext_resource type="Script" path="res://character/spawner.cs" id="1_wqm1f"]
 [ext_resource type="PackedScene" uid="uid://dsxjhi2giui2f" path="res://character/sworddanny.tscn" id="2_mwqib"]
 [ext_resource type="PackedScene" uid="uid://bym18rutiea3" path="res://character/danny.tscn" id="3_djpwb"]
 [ext_resource type="Texture2D" uid="uid://dhyacq3amaea" path="res://assets/Legacy Fantasy - Kingdom Fortress - Update/Background/02.png" id="4_cvle3"]
@@ -1490,6 +1491,7 @@ size = Vector2(21.625, 65.875)
 size = Vector2(97, 32)
 
 [node name="level1" type="Node2D"]
+script = ExtResource("1_wqm1f")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 1)
