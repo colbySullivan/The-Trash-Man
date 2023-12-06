@@ -2424,10 +2424,10 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_ofu1e")]
+[node name="sworddanny" parent="." instance=ExtResource("3_ofu1e")]
 position = Vector2(224, 497)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="sworddanny"]
 position = Vector2(1, 4)
 remote_path = NodePath("../../Camera2D")
 
@@ -2509,3 +2509,6 @@ position = Vector2(0, 2)
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Level finish door"]
 position = Vector2(3898.41, 469.969)
 shape = SubResource("RectangleShape2D_iuvql")
+
+[connection signal="area_entered" from="Fall area" to="sworddanny" method="_on_fall_area_area_entered"]
+[connection signal="area_entered" from="Portal" to="sworddanny" method="restart_portal"]
