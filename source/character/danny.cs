@@ -123,7 +123,7 @@ public partial class danny : CharacterBody2D
 	private void _on_stomp_area_body_entered(Node2D body)
 	{
 		// Character stomped on Danny
-		GD.Print(body.Name);
+		//GD.Print(body.Name); // Leave for debugging
 		if(body.Name == "sworddanny")
 		{
 			QueueFree();
