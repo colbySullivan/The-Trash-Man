@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dv4y7cpphvgim"
+path="res://.godot/imported/trash.aseprite-83d8b3bd45cc86af69afcc6a1899faba.res"
+
+[deps]
+
+source_file="res://src/sprites/trash.aseprite"
+dest_files=["res://.godot/imported/trash.aseprite-83d8b3bd45cc86af69afcc6a1899faba.res"]
+
+[params]
+

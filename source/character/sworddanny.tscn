@@ -1,79 +1,73 @@
 [gd_scene load_steps=17 format=3 uid="uid://dsxjhi2giui2f"]
 
 [ext_resource type="Script" path="res://character/sworddanny.cs" id="1_x14lv"]
+[ext_resource type="Texture2D" uid="uid://wlnn7c66m3s2" path="res://character/trashFight.png" id="2_1thgh"]
+[ext_resource type="Texture2D" uid="uid://bc3kwpskj2d10" path="res://character/trashIdle.png" id="2_oy7rw"]
 [ext_resource type="Script" path="res://character/CollisionShape2D.cs" id="10_rq420"]
 [ext_resource type="Texture2D" uid="uid://dgw4ggqngiofs" path="res://src/pngegg (1).png" id="11_nghr7"]
-[ext_resource type="Texture2D" uid="uid://cri731ntpba4h" path="res://character/dannysprite.png" id="12_igkw0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ovl"]
 size = Vector2(14, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u36hd"]
-atlas = ExtResource("12_igkw0")
-region = Rect2(0, 192, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bvcwh"]
-atlas = ExtResource("12_igkw0")
-region = Rect2(96, 96, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aq06a"]
-atlas = ExtResource("12_igkw0")
-region = Rect2(192, 96, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a3wnc"]
-atlas = ExtResource("12_igkw0")
-region = Rect2(96, 192, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0qohe"]
-atlas = ExtResource("12_igkw0")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywgav"]
+atlas = ExtResource("2_1thgh")
 region = Rect2(0, 0, 96, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mfqua"]
-atlas = ExtResource("12_igkw0")
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa1dg"]
+atlas = ExtResource("2_1thgh")
 region = Rect2(96, 0, 96, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dxv66"]
-atlas = ExtResource("12_igkw0")
-region = Rect2(192, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ly81"]
-atlas = ExtResource("12_igkw0")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkjy3"]
+atlas = ExtResource("2_1thgh")
 region = Rect2(0, 96, 96, 96)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vexvu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvh51"]
+atlas = ExtResource("2_oy7rw")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bac4f"]
+atlas = ExtResource("2_oy7rw")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbx1p"]
+atlas = ExtResource("2_oy7rw")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52284"]
+atlas = ExtResource("2_oy7rw")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ty3v4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u36hd")
+"texture": SubResource("AtlasTexture_ywgav")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bvcwh")
+"texture": SubResource("AtlasTexture_aa1dg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_aq06a")
+"texture": SubResource("AtlasTexture_hkjy3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u36hd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a3wnc")
+"texture": SubResource("AtlasTexture_hkjy3")
 }],
 "loop": true,
 "name": &"fight",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0qohe")
+"texture": SubResource("AtlasTexture_tvh51")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mfqua")
+"texture": SubResource("AtlasTexture_bac4f")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dxv66")
+"texture": SubResource("AtlasTexture_kbx1p")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1ly81")
+"texture": SubResource("AtlasTexture_52284")
 }],
 "loop": true,
 "name": &"idle",
@@ -99,8 +93,9 @@ shape = SubResource("RectangleShape2D_h7ovl")
 texture_filter = 1
 position = Vector2(-33, -27)
 scale = Vector2(0.71875, 0.729167)
-sprite_frames = SubResource("SpriteFrames_vexvu")
+sprite_frames = SubResource("SpriteFrames_ty3v4")
 animation = &"fight"
+frame_progress = 0.900601
 centered = false
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
@@ -109,7 +104,7 @@ metadata/_aseprite_wizard_config_ = {
 "o_name": "",
 "only_visible": false,
 "op_exp": false,
-"source": "res://src/dannysprite.aseprite"
+"source": "res://src/sprites/trashFight.aseprite"
 }
 
 [node name="SwordArea" type="Area2D" parent="."]

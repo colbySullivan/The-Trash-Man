@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://t4ga4cg8ntw5"
+path="res://.godot/imported/fight.aseprite-86c61a98e8fb0f4624841fed5f14699e.res"
+
+[deps]
+
+source_file="res://src/sprites/fight.aseprite"
+dest_files=["res://.godot/imported/fight.aseprite-86c61a98e8fb0f4624841fed5f14699e.res"]
+
+[params]
+
