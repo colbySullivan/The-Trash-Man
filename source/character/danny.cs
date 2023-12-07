@@ -20,7 +20,11 @@ public partial class danny : CharacterBody2D
 	// Wonder is the same as idle
 	public String attackState = "wonder";
 	
+	// When mob is in attack state it will move towards user
 	public Vector2 playerPos = new Vector2(0,0);
+	
+	public AnimatedSprite2D _animatedSprite;
+	//public AnimatedSprite2D _animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 	
 	Random r = new Random();
 	
@@ -29,6 +33,8 @@ public partial class danny : CharacterBody2D
 	
 	public override void _Ready()
 	{
+		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_animatedSprite.Play("idle");
 	}
 	public override void _PhysicsProcess(double delta)
 	{
@@ -44,8 +50,6 @@ public partial class danny : CharacterBody2D
 			time = 0;
 		  }
 	  	}
-		AnimatedSprite2D _animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-		_animatedSprite.Play("idle");
 		Vector2 velocity = Velocity;
 
 		// Add the gravity.
@@ -56,15 +60,17 @@ public partial class danny : CharacterBody2D
 		if(attackState == "wonder")
 		{
 			if(state == 3){
-			_animatedSprite.Play("left");
-			velocity.X = SpeedLeft;
+				velocity.X = SpeedLeft;
 			}
 			if(state == 2){
-			_animatedSprite.Play("right");
-			velocity.X = SpeedRight;
+				velocity.X = SpeedRight;
 			}
 			else if (state == 1)
-			velocity.X = 0;
+			{
+				_animatedSprite.Play("idle");
+				velocity.X = 0;
+			}
+			
 		}
 		// User entered left area
 		else if(attackState == "fightLeft")
@@ -97,19 +103,30 @@ public partial class danny : CharacterBody2D
 	private void _on_attack_range_body_entered_left(Node2D body)
 	{
 		if(body.Name == "sworddanny") // Insures that other collisons don't count
+		{
+			_animatedSprite.Play("fight");
 			attackState = "fightLeft";	
+		} 
+			
 	}
 	private void _on_interaction_area_body_exited(Node2D body)
 	{
 		if(body.Name == "sworddanny")
-			// Return to random state when user is outside zone
+		{
+			_animatedSprite.Play("fight");
 			attackState = "wonder";
+		}
+		// Return to random state when user is outside zone	
 	}	
 	// Character on right of danny
 	private void _on_attack_range_body_entered_right(Node2D body)
 	{
 		if(body.Name == "sworddanny")
+		{
+			_animatedSprite.Play("fight");
 			attackState = "fightRight";
+		}
+			
 	}	
 	private void _on_stomp_area_body_entered(Node2D body)
 	{
@@ -117,6 +134,7 @@ public partial class danny : CharacterBody2D
 		//GD.Print(body.Name); // Leave for debugging
 		if(body.Name == "sworddanny")
 		{
+			_animatedSprite.Play("fight");
 			QueueFree();
 		}
 			
