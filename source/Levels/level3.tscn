@@ -2515,8 +2515,8 @@ position = Vector2(3895.91, 360.969)
 shape = SubResource("RectangleShape2D_iuvql")
 
 [node name="Rumball" type="Sprite2D" parent="."]
-position = Vector2(4220, 615)
-scale = Vector2(2.25205, 2.39959)
+position = Vector2(3787, 379)
+scale = Vector2(1.26127, 1.26537)
 texture = ExtResource("7_t36qj")
 
 [node name="Rumhead" type="Sprite2D" parent="."]
