@@ -16,7 +16,7 @@ public partial class menu : Control
 	}
 	private void _on_start_pressed()
 	{
-		GetTree().ChangeSceneToFile("res://Levels/first_screen.tscn");
+		GetTree().ChangeSceneToFile("res://Levels/jump_level.tscn");
 	}
 
 

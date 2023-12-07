@@ -101,7 +101,7 @@ public partial class sworddanny : CharacterBody2D
 		// Need vector to satisify animation updating
 		direction = Input.GetVector("left", "right", "up", "down");
 		// If player is in air they can swing and move
-		if(_sceneName != "First Screen")
+		if(_sceneName != "jump_level")
 		{
 			if (direction != Vector2.Zero && (!is_swinging || !IsOnFloor()))
 			{

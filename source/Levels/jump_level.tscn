@@ -1,16 +1,16 @@
 [gd_scene load_steps=13 format=3 uid="uid://2qa23a5lxf1q"]
 
-[ext_resource type="Script" path="res://character/spawner.cs" id="1_xy8u4"]
-[ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Original Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_75ko3"]
-[ext_resource type="PackedScene" uid="uid://bym18rutiea3" path="res://character/danny.tscn" id="4_f4xs7"]
-[ext_resource type="Texture2D" uid="uid://dhyacq3amaea" path="res://assets/Legacy Fantasy - Kingdom Fortress - Update/Background/02.png" id="5_fxav6"]
-[ext_resource type="Texture2D" uid="uid://bwgu10y30tkp6" path="res://assets/Legacy Fantasy - Kingdom Fortress - Update/Background/Background.2-export.png" id="5_yy7d6"]
-[ext_resource type="Texture2D" uid="uid://s7ffevbxfdmp" path="res://src/rumball.png" id="6_0bavm"]
-[ext_resource type="PackedScene" uid="uid://dsxjhi2giui2f" path="res://character/sworddanny.tscn" id="6_genyy"]
-[ext_resource type="Texture2D" uid="uid://cbe7t2c8hhma7" path="res://src/rumhead.jpg" id="7_xew0a"]
+[ext_resource type="Script" path="res://character/spawner.cs" id="1_vk0k0"]
+[ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Original Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_5bemx"]
+[ext_resource type="PackedScene" uid="uid://dsxjhi2giui2f" path="res://character/sworddanny.tscn" id="3_ijf0d"]
+[ext_resource type="Texture2D" uid="uid://cbe7t2c8hhma7" path="res://src/rumhead.jpg" id="4_fxye8"]
+[ext_resource type="Texture2D" uid="uid://dhyacq3amaea" path="res://assets/Legacy Fantasy - Kingdom Fortress - Update/Background/02.png" id="5_q3h5i"]
+[ext_resource type="Texture2D" uid="uid://bwgu10y30tkp6" path="res://assets/Legacy Fantasy - Kingdom Fortress - Update/Background/Background.2-export.png" id="6_c147q"]
+[ext_resource type="PackedScene" uid="uid://bym18rutiea3" path="res://character/danny.tscn" id="7_elmwk"]
+[ext_resource type="Texture2D" uid="uid://s7ffevbxfdmp" path="res://src/rumball.png" id="8_qytja"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ivihc"]
-texture = ExtResource("2_75ko3")
+texture = ExtResource("2_5bemx")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1495,8 +1495,8 @@ size = Vector2(41, 65.875)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbsx2"]
 size = Vector2(97, 32)
 
-[node name="First Screen" type="Node2D"]
-script = ExtResource("1_xy8u4")
+[node name="jump_level" type="Node2D"]
+script = ExtResource("1_vk0k0")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 1)
@@ -1513,7 +1513,7 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="sworddanny" parent="." instance=ExtResource("6_genyy")]
+[node name="sworddanny" parent="." instance=ExtResource("3_ijf0d")]
 position = Vector2(162, 503)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="sworddanny"]
@@ -1524,7 +1524,7 @@ remote_path = NodePath("../../Camera2D")
 z_index = -1
 position = Vector2(-122, 25)
 scale = Vector2(0.0483333, 0.0445833)
-texture = ExtResource("7_xew0a")
+texture = ExtResource("4_fxye8")
 
 [node name="Label" type="Label" parent="sworddanny/RemoteTransform2D/Rumhead"]
 offset_left = 320.689
@@ -1554,7 +1554,7 @@ motion_mirroring = Vector2(1050, 2.08165e-12)
 texture_repeat = 2
 position = Vector2(117, -51.5005)
 scale = Vector2(3.13523, 2.19486)
-texture = ExtResource("5_fxav6")
+texture = ExtResource("5_q3h5i")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(235, 466)
@@ -1564,7 +1564,7 @@ motion_mirroring = Vector2(672, 2.08165e-12)
 texture_repeat = 3
 position = Vector2(172, 45)
 scale = Vector2(2, 1.71875)
-texture = ExtResource("5_yy7d6")
+texture = ExtResource("6_c147q")
 
 [node name="Level Label" type="Label" parent="."]
 visible = false
@@ -1613,10 +1613,10 @@ theme_override_font_sizes/font_size = 8
 text = "Press Space twice 
 to double Jump"
 
-[node name="Danny3" parent="." groups=["Mobs"] instance=ExtResource("4_f4xs7")]
+[node name="Danny3" parent="." groups=["Mobs"] instance=ExtResource("7_elmwk")]
 position = Vector2(2226, 308)
 
-[node name="Danny4" parent="." groups=["Mobs"] instance=ExtResource("4_f4xs7")]
+[node name="Danny4" parent="." groups=["Mobs"] instance=ExtResource("7_elmwk")]
 position = Vector2(2678, 336)
 
 [node name="Danny wall" type="StaticBody2D" parent="."]
@@ -1647,6 +1647,6 @@ shape = SubResource("RectangleShape2D_hbsx2")
 [node name="Rumball" type="Sprite2D" parent="."]
 position = Vector2(175, 23)
 scale = Vector2(0.14959, 0.155738)
-texture = ExtResource("6_0bavm")
+texture = ExtResource("8_qytja")
 
-[connection signal="area_entered" from="Portal" to="sworddanny" method="_on_portal_body_entered"]
+[connection signal="area_entered" from="Portal" to="." method="_on_portal_body_entered"]

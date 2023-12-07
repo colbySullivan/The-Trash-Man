@@ -19,4 +19,10 @@ public partial class spawner : Node2D
 	public override void _Process(double delta)
 	{
 	}
+	
+	private void _on_portal_body_entered(Node2D body)
+{
+	if(body.Name == "AreaHitbox")
+			GetTree().ChangeSceneToFile("res://Levels/level1.tscn");
+}
 }
