@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cps7fg0nygi7l"]
+[gd_scene load_steps=12 format=3 uid="uid://otcre6yvljao"]
 
 [ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Original Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_mvb50"]
 [ext_resource type="Script" path="res://character/spawner.cs" id="1_wqm1f"]
