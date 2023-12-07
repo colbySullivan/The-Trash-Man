@@ -95,7 +95,7 @@ position = Vector2(-33, -27)
 scale = Vector2(0.71875, 0.729167)
 sprite_frames = SubResource("SpriteFrames_ty3v4")
 animation = &"fight"
-frame_progress = 0.900601
+frame_progress = 0.64201
 centered = false
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
