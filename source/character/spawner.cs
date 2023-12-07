@@ -7,10 +7,10 @@ public partial class spawner : Node2D
 	public override void _Ready()
 	{
 		// Create new instances of mobs
-		var scene = GD.Load<PackedScene>("res://character/danny.tscn"); // Will load when the script is instanced.
-		var node = scene.Instantiate();
 		//node.Position = GetNode<CharacterBody2D>("Character").Position;
-		for(int i = 0; i < 4; i++){
+		var scene = GD.Load<PackedScene>("res://character/danny.tscn"); // Will load when the script is instanced.
+		for(int i = 0; i < 5; i++){
+			var node = scene.Instantiate();
 			AddChild(node);
 		}
 	}
