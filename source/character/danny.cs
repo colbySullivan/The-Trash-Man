@@ -10,11 +10,14 @@ public partial class danny : CharacterBody2D
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
+	// Default attack state is standing still
 	public int state = 1;
 	
+	// Used for simple attack state machine
 	public bool timer = true;
 	public double time = 0;
 	
+	// Wonder is the same as idle
 	public String attackState = "wonder";
 	
 	public Vector2 playerPos = new Vector2(0,0);
@@ -66,7 +69,7 @@ public partial class danny : CharacterBody2D
 		// User entered left area
 		else if(attackState == "fightLeft")
 		{
-			//_animatedSprite.Play("left"); // No longer needed
+			//_animatedSprite.Play("left"); // New garbage bag mobs only have one animation
 			//_animatedSprite.FlipH = false;
 			velocity.X = SpeedLeft;
 		}
