@@ -24,24 +24,9 @@ public partial class danny : CharacterBody2D
 	[Export]
 	public Vector2 initalPos = new Vector2(621,540);
 	
-	//public override void _Ready()
-	//{
-		// Spawn more class instances
-		//danny mob = MobScene.Instantiate<danny>();
-		//var dannyScene = ResourceLoader.Load("res://character/danny.tscn");
-		//instance.SetPos = initalPos;
-		// Store the reference to the SpawnLocation node.
-		//var mobSpawnLocation = GetNode<PathFollow3D>("SpawnPath/SpawnLocation");
-		//for(int i = 4; i < 4; i++){
-			//mobSpawnLocation.ProgressRatio = GD.Randf();
-			//Vector2 playerPosition = GetNode<CharacterBody2D>("Character").Position;
-			//mob.Initialize(mobSpawnLocation.Position, playerPosition);
-			// Spawn the mob by adding it to the Main scene.
-			//mob.playerPos = playerPosition;
-			//GD.Print("created new danny instance");
-			//AddChild(mob);
-		//}
-	//}
+	public override void _Ready()
+	{
+	}
 	public override void _PhysicsProcess(double delta)
 	{
 		//var dannynode = GetTree().GetRoot().GetNode("Character");
@@ -57,6 +42,7 @@ public partial class danny : CharacterBody2D
 		  }
 	  	}
 		AnimatedSprite2D _animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_animatedSprite.Play("idle");
 		Vector2 velocity = Velocity;
 
 		// Add the gravity.
@@ -80,13 +66,15 @@ public partial class danny : CharacterBody2D
 		// User entered left area
 		else if(attackState == "fightLeft")
 		{
-			_animatedSprite.Play("left");
+			//_animatedSprite.Play("left"); // No longer needed
+			//_animatedSprite.FlipH = false;
 			velocity.X = SpeedLeft;
 		}
 		// User entered right area
 		else if(attackState == "fightRight")
 		{
-			_animatedSprite.Play("right");
+			// _animatedSprite.Play("right");
+			//_animatedSprite.FlipH = true;
 			velocity.X = SpeedRight;
 		}
 			
