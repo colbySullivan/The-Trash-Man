@@ -224,7 +224,7 @@ public partial class character : CharacterBody2D
 	private void restart_portal(Node2D body)
 	{
 		if(body.Name == "AreaHitbox")
-			GetTree().ChangeSceneToFile("res://Levels/first_screen.tscn");
+			GetTree().ChangeSceneToFile("res://Levels/jump_level.tscn");
 	}
 	public void _on_level2_finish_door_area_entered(Node2D body)
 	{
