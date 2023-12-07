@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://qqnwe7gjb41c"]
+[gd_scene load_steps=15 format=3 uid="uid://qqnwe7gjb41c"]
 
 [ext_resource type="Texture2D" uid="uid://b03x0t3sxddy7" path="res://assets/Original Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_2un6q"]
+[ext_resource type="Script" path="res://character/spawner.cs" id="1_eraqq"]
 [ext_resource type="Texture2D" uid="uid://beuk8c5lk1eq4" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/Tiles.png" id="2_uq5px"]
 [ext_resource type="PackedScene" uid="uid://dsxjhi2giui2f" path="res://character/sworddanny.tscn" id="3_y6a0a"]
 [ext_resource type="PackedScene" uid="uid://bym18rutiea3" path="res://character/danny.tscn" id="4_q8y36"]
 [ext_resource type="Texture2D" uid="uid://bv7vpnetswain" path="res://assets/Legacy Fantasy - Blood Mansion/Assets/Background.png" id="5_o4706"]
+[ext_resource type="Texture2D" uid="uid://s7ffevbxfdmp" path="res://src/rumball.png" id="7_t36qj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ivihc"]
 texture = ExtResource("1_2un6q")
@@ -2405,9 +2407,10 @@ size = Vector2(46.5, 75.75)
 size = Vector2(88, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iuvql"]
-size = Vector2(34.8125, 111.938)
+size = Vector2(39.8162, 329.938)
 
 [node name="level3" type="Node2D"]
+script = ExtResource("1_eraqq")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 1)
@@ -2507,8 +2510,13 @@ shape = SubResource("RectangleShape2D_crur7")
 position = Vector2(0, 2)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Level finish door"]
-position = Vector2(3898.41, 469.969)
+position = Vector2(3895.91, 360.969)
 shape = SubResource("RectangleShape2D_iuvql")
 
-[connection signal="area_entered" from="Fall area" to="sworddanny" method="_on_fall_area_area_entered"]
-[connection signal="area_entered" from="Portal" to="sworddanny" method="restart_portal"]
+[node name="Rumball" type="Sprite2D" parent="."]
+position = Vector2(4220, 615)
+scale = Vector2(2.25205, 2.39959)
+texture = ExtResource("7_t36qj")
+
+[connection signal="area_entered" from="Fall area" to="." method="_on_fall_area_area_entered"]
+[connection signal="area_entered" from="Level finish door" to="." method="_on_portal_body_entered"]

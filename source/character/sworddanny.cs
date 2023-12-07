@@ -65,7 +65,7 @@ public partial class sworddanny : CharacterBody2D
 		{
 			velocity.Y += gravity * (float)delta;
 			was_in_air = true;
-			GD.Print(_sceneName);
+			//GD.Print(_sceneName);
 		}
 			
 		else

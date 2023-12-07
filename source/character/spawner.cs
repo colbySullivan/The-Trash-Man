@@ -20,9 +20,33 @@ public partial class spawner : Node2D
 	{
 	}
 	
+	// Player entered a portal
+	// TODO can clean this up by simply using the scence names
+	// concated into calls
 	private void _on_portal_body_entered(Node2D body)
-{
-	if(body.Name == "AreaHitbox")
-			GetTree().ChangeSceneToFile("res://Levels/level1.tscn");
-}
+	{
+		String _sceneName = GetTree().CurrentScene.Name;
+		if(body.Name == "AreaHitbox")
+			switch(_sceneName) 
+			{
+				default:
+					GetTree().ChangeSceneToFile("res://Levels/level1.tscn");
+				break;
+				case "level1":
+					GetTree().ChangeSceneToFile("res://Levels/level2.tscn");
+				break;	
+				case "level2":
+					GetTree().ChangeSceneToFile("res://Levels/level3.tscn");
+				break;
+				case "level3":
+					GetTree().ChangeSceneToFile("res://Levels/menu.tscn");
+				break;
+			}
+	}
+	
+	// Player fell through hole
+	private void _on_fall_area_area_entered(Area2D area)
+	{
+		GetTree().ReloadCurrentScene();
+	}
 }
