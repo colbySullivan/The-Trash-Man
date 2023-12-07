@@ -1,10 +1,27 @@
-[gd_scene load_steps=12 format=3 uid="uid://bym18rutiea3"]
+[gd_scene load_steps=17 format=3 uid="uid://bym18rutiea3"]
 
 [ext_resource type="Script" path="res://character/danny.cs" id="1_xm75j"]
 [ext_resource type="Texture2D" uid="uid://bo3lowk3ow2bv" path="res://character/trashybag.png" id="2_bk8kk"]
+[ext_resource type="Texture2D" uid="uid://n11dypkxnkb4" path="res://character/trashybagattack.png" id="2_bu6gj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7ovl"]
 size = Vector2(16, 16.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c538l"]
+atlas = ExtResource("2_bu6gj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwf8o"]
+atlas = ExtResource("2_bu6gj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmi4i"]
+atlas = ExtResource("2_bu6gj")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfhid"]
+atlas = ExtResource("2_bu6gj")
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kgp0n"]
 atlas = ExtResource("2_bk8kk")
@@ -20,6 +37,23 @@ region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p1ajv"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c538l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwf8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmi4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfhid")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kgp0n")
@@ -65,7 +99,8 @@ texture_filter = 1
 position = Vector2(0, 1)
 scale = Vector2(0.671875, 0.708333)
 sprite_frames = SubResource("SpriteFrames_p1ajv")
-animation = &"idle"
+animation = &"attack"
+frame_progress = 0.539827
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
